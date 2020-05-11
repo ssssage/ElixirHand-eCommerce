@@ -26,14 +26,14 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(180);
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasMaxLength(100);
+
+                    b.Property<string>("PictureUrl")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -50,7 +50,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasIndex("ProductTypeId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Core.Entities.ProductBrand", b =>
@@ -64,7 +64,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductBrands");
+                    b.ToTable("ProductBrand");
                 });
 
             modelBuilder.Entity("Core.Entities.ProductType", b =>
@@ -78,7 +78,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductTypes");
+                    b.ToTable("ProductType");
                 });
 
             modelBuilder.Entity("Core.Entities.Product", b =>
