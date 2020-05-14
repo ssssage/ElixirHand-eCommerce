@@ -3,6 +3,7 @@ using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
@@ -31,10 +32,12 @@ namespace Infrastructure.Repositories
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            return await _context.Product
+               return await _context.Product
                 .Include(p => p.ProductType)
-                .Include(p =>p.ProductBrand)
+                .Include(p => p.ProductBrand)
                 .ToListAsync();
+
+            
         }
 
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()

@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{A7147E44-B94A-44F6-87E8-1E91243A24FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{A7147E44-B94A-44F6-87E8-1E91243A24FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{6E4F84F8-8354-4B10-82FD-40FB90B4B5C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{6E4F84F8-8354-4B10-82FD-40FB90B4B5C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{AF09ED97-238D-46E5-A973-5CBC1F1C557C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{AF09ED97-238D-46E5-A973-5CBC1F1C557C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{74E0D12A-7177-4353-865A-8D83C71F9D14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElixirHandAPI.Test", "test\ElixirHandAPI.Test\ElixirHandAPI.Test.csproj", "{AD2D9782-E0B6-4F92-B2C7-703A34F0456A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElixirHandAPI.Test", "test\ElixirHandAPI.Test\ElixirHandAPI.Test.csproj", "{AD2D9782-E0B6-4F92-B2C7-703A34F0456A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{576D5652-BFDB-48CA-9374-B2F76D507F9A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +26,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A7147E44-B94A-44F6-87E8-1E91243A24FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -75,7 +77,13 @@ Global
 		{AD2D9782-E0B6-4F92-B2C7-703A34F0456A}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD2D9782-E0B6-4F92-B2C7-703A34F0456A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AD2D9782-E0B6-4F92-B2C7-703A34F0456A} = {74E0D12A-7177-4353-865A-8D83C71F9D14}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43DD2FA3-7752-4B1D-BBB0-83FFABC42B1D}
 	EndGlobalSection
 EndGlobal
