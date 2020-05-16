@@ -30,7 +30,7 @@ namespace API.Controllers
             _productTypeRepo = productTypeRepo;
         }
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts()
         {
             var spec = new ProductsWithTypesAndBrandsSpecification();
 
@@ -38,7 +38,7 @@ namespace API.Controllers
             //var products = await _productRepo.ListAllAsync();
             var products = await _productRepo.ListAsync(spec);
 
-            return Ok(products);
+            return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
         }
 
         [HttpGet("{id}")]
