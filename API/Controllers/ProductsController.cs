@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace API.Controllers
 {
 
-    public class ProductsController : BaseAPiController
+    public class ProductsController : BaseApiController
     {
         private readonly IMapper _mapper;
         private readonly IGenericRepository<Product> _productRepo;
