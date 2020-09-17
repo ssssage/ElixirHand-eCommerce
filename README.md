@@ -22,4 +22,17 @@ You will see an out put "A Valid HTTPS certificate is already present"
 
 To see what options are available run the following command dotnet dev-certs https -h  and then dotnet dev-certs https -t
 
+
+# Recreating Migrations
+In case you want to use your own database or you dont want existing database then recreate migrations by following simple steps
+Step 1 ==> at solutions level use the the following command to drop the database
+dotnet ef database -p Infrastructure -s API
+
+Step 2 ==> Remove the existing migrations
+dotnet ef migrations remove -p Infrastructure -s API
+
+Step 3 ==> Add new migration
+dotnet ef migrations add -p Infrastructure -s API -o Data/Migrations
+
+
  
