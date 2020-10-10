@@ -12,6 +12,13 @@ Entire front end development is based on Angular
 # Project Description
 This project is built upon restful web api using asp.net core that access the database using Entity Framework Core along with Angular as a user facing site to sell and buy products. This project have multiple features like getting resources from web api and manipulate them, built in dependency injection system configuration, logger, working with environments variables, middleware, configuration files and EF core features for example migrations and seeding the database.  
 
+# Project clonning 
+git clone https://github.com/elixirhand/ElixirHand-Seller-Services.git
+
+
+# Push code
+git remote add origin https://github.com/elixirhand/ElixirHand-Seller-Services.git
+git push origin branchname
 
 # SSL Certificate 
 Initially when you run the project to call Get method it will not run in postman because of SSL issue.

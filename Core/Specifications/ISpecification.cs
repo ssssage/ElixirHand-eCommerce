@@ -7,6 +7,7 @@ namespace Core.Specifications
 
     public interface ISpecification<T>
     {
+        //denotes a tree data structure for a lambda expression
         Expression<Func<T, bool>> Criteria { get; }
 
         List<Expression<Func<T, object>>> Includes { get; }
