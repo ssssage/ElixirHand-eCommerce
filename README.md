@@ -13,7 +13,10 @@ ElixirHand-Seller is complete e-Commerce open source project using Angular as a 
  
 
 # Technologies are used for the back end development
-For backend development we used Web APIs, SQL Database and Entity framework core.
+For backend development we used 
+* Web APIs
+* SQL Database
+* Entity framework core
 
  
 
