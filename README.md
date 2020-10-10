@@ -18,7 +18,7 @@ We are Manchester based. So, feel free to [contact us](https://elixirhand.com/#c
 
 # Project Description
 ElixirHand-Seller Services is complete e-Commerce open source project 
-using Angular as a front end and ASP.NET Core as a Back end for the selling products.
+based on Angular as a front end and ASP.NET Core as a Back end for selling products online.
 
 This project is built upon restful web api using asp.net core that access the database using Entity Framework Core 
 along with Angular as a user facing site to sell and buy products. This project have multiple features like getting resources from web api
