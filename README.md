@@ -1,45 +1,44 @@
 # ElixirHand-Seller-Services
-ElixirHand-Seller is complete e-Commerce open source project using Angular as a front end and ASP.NET Core as a Back end for the selling products. 
+ 
 
+We are a 
+* Design & Development 
+* Cloud Services 
+* software development % Hosting
+Service Provider based in Manchester with extensive expertise in Cloud Services and Software Architecture.
+
+ 
+
+At ElixirHand we provide complete 
+* system design 
+* consultancy services 
+and help business in order develop applications that are resilient and scalable. 
+We are Manchester based. So, feel free to [contact us](https://elixirhand.com/#contact)
+ 
+
+# Project Description
+ElixirHand-Seller Services is complete e-Commerce open source project 
+based on Angular as a front end and ASP.NET Core as a Back end for selling products online.
+
+This project is built upon restful web api using asp.net core that access the database using Entity Framework Core 
+along with Angular as a user facing site to sell and buy products. This project have multiple features like getting resources from web api
+and manipulate them, built in dependency injection system configuration, logger, working with environments variables, 
+middleware, configuration files and EF core features for example migrations and seeding the database.
+
+ 
 
 # Technologies are used for the back end development
-For backend development we used Web APIs, SQL Database and Entity framework core.
+For backend development we used 
+* Web APIs
+* SQL Database
+* Entity framework core
 
+ 
 
 # Technologies are used for the front end development
 Entire front end development is based on Angular
 
-# Project Description
-This project is built upon restful web api using asp.net core that access the database using Entity Framework Core along with Angular as a user facing site to sell and buy products. This project have multiple features like getting resources from web api and manipulate them, built in dependency injection system configuration, logger, working with environments variables, middleware, configuration files and EF core features for example migrations and seeding the database.  
-
-# Project clonning 
-git clone https://github.com/elixirhand/ElixirHand-Seller-Services.git
-
-
-# Push code
-git remote add origin https://github.com/elixirhand/ElixirHand-Seller-Services.git
-git push origin branchname
-
-# SSL Certificate 
-Initially when you run the project to call Get method it will not run in postman because of SSL issue.
-In postman disable the SSL Certificate verification
-
-However on running the following command dotnet dev-certs https
-You will see an out put "A Valid HTTPS certificate is already present"
-
-To see what options are available run the following command dotnet dev-certs https -h  and then dotnet dev-certs https -t
-
-
-# Recreating Migrations
-In case you want to use your own database or you dont want existing database then recreate migrations by following simple steps
-Step 1 ==> at solutions level use the the following command to drop the database
-dotnet ef database -p Infrastructure -s API
-
-Step 2 ==> Remove the existing migrations
-dotnet ef migrations remove -p Infrastructure -s API
-
-Step 3 ==> Add new migration
-dotnet ef migrations add -p Infrastructure -s API -o Data/Migrations
-
-
  
+
+# ElixirHand Seller Services Features
+Full feature list is available here [ElixirHand Seller Services Features](https://elixirhand.com/#contact)
