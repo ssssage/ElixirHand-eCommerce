@@ -26,4 +26,4 @@ Entire front end development is based on Angular
 This project is built upon restful web api using asp.net core that access the database using Entity Framework Core along with Angular as a user facing site to sell and buy products. This project have multiple features like getting resources from web api and manipulate them, built in dependency injection system configuration, logger, working with environments variables, middleware, configuration files and EF core features for example migrations and seeding the database.
 
 # ElixirHand Seller Services Features
-Full feature list is available here [ElixirHand Seller Services Features] (https://elixirhand.com/#contact)
+Full feature list is available here [ElixirHand Seller Services Features](https://elixirhand.com/#contact)
