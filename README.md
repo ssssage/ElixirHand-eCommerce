@@ -41,5 +41,84 @@ dotnet ef migrations remove -p Infrastructure -s API
 Step 3 ==> Add new migration
 dotnet ef migrations add -p Infrastructure -s API -o Data/Migrations
 
+# Frontend App
+We have added client project based 
+Angular CLI: 10.1.6
+Node: 12.19.0
+OS: win32 x64
+bootstrap >=4.3.1
+
+Initially we added some components for example To Nav Bar Component
+
+# General commands
+General commands that we have used so far.
+After installing the node
+To create new angular app
+npm install -g @angular/cli
+ng new FrontendApp
+
+Or you can create Angular app using visual studio
+
+//To run the angular project use command line and run the following command
+ng serve  or use visual studio or dotnet run command
+
+
+//To stop 
+ctrl c
+
+To kill the processor
+netstat -ano | findstr :portnumber
+
+taskkill /PID portnumber /F
+
+# ADding fonts and Bootstrap
+ng add ngx-bootstrap for installing
+npm install font-awesome
+
+
+# Generate new Component 
+to generate new component
+
+ng g
+ng g component name oftheComponent
+or ng g c top-nav-bar --skip-tests
+
+# Help at component level
+ng g c --help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
