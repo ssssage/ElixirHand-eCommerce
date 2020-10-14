@@ -41,4 +41,4 @@ Entire front end development is based on Angular
  
 
 # ElixirHand Seller Services Features
-Full feature list is available here [ElixirHand Seller Services Features](https://elixirhand.com/#contact)
+Full feature list is available here [ElixirHand Seller Services Features](https://elixirhand.com/elixirhand-seller-services-the-online-store/)
