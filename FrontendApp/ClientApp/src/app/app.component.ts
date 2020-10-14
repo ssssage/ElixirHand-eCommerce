@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { cwd } from 'process';
+import { InterfaceProduct } from './Interfaces/product';
+import { InterfacePaging } from './Interfaces/paging';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,13 @@ import { cwd } from 'process';
 export class AppComponent implements OnInit {
 
   title = 'ElixirHand Seller Servicess';
-  shoppingProducts: any[];
+  shoppingProducts: InterfaceProduct[];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('https://localhost:5001/api/products?pageSize=50').subscribe((response: any) => {
+    this.http.get('https://localhost:5001/api/products?pageSize=50')
+      .subscribe((response: InterfacePaging) => {
 
       //console.log(response);
       this.shoppingProducts = response.data;
