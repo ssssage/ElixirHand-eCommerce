@@ -1,0 +1,28 @@
+Clonning the Project
+git remote add origin https://github.com/ssssage/ElixirHand-Seller-Services.git
+
+git clone https://github.com/ssssage/ElixirHand-Seller-Services.git
+
+
+
+======================================================================================
+Install Node, NPM
+Install Angular
+npm install -g @angular/cli
+
+Create New Angular App
+ng new ClientApp
+
+
+Run angular App
+ng serve
+
+Install BootStrap
+In ClientApp install Bootstrap
+npm install bootstarp@4.6.0
+
+
+Generate component in app
+Find help ng g c --help
+To skip tests ng g c nameOfComponent[top-nav-bar] --skip-tests
+ng g c nameOfComponent[top-nav-bar]
