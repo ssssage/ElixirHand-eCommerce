@@ -611,3 +611,5 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+FrontendApp/ClientApp/ssl
