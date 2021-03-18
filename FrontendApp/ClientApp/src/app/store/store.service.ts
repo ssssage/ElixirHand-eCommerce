@@ -17,10 +17,10 @@ export class StoreService {
   }
 
   getBrands() {
-    return this.http.get<IBrand>(this.baseUrl + 'products/brands')
+    return this.http.get<IBrand[]>(this.baseUrl + 'products/brands')
   }
   
   getProductTypes() {
-    return this.http.get<IProductType>(this.baseUrl + 'products/types')
+    return this.http.get<IProductType[]>(this.baseUrl + 'products/types')
   }
 }
