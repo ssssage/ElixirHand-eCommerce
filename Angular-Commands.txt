@@ -26,3 +26,9 @@ Generate component in app
 Find help ng g c --help
 To skip tests ng g c nameOfComponent[top-nav-bar] --skip-tests
 ng g c nameOfComponent[top-nav-bar]
+
+Generate new module in ClientApp/src/app
+ng g m core
+ng g m store
+ng g m shared
+
