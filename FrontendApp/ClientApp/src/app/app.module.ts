@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
+import { TopNavBarComponent } from './core/top-nav-bar/top-nav-bar.component';
 
 @NgModule({
   declarations: [
