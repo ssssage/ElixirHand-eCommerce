@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { InterfaceProduct } from './shared/Interfaces/product';
-import { InterfacePaging } from './shared/Interfaces/paging';
+
 
 @Component({
   selector: 'app-root',
@@ -11,22 +9,11 @@ import { InterfacePaging } from './shared/Interfaces/paging';
 export class AppComponent implements OnInit {
 
   title = 'ElixirHand Seller Servicess';
-  shoppingProducts: InterfaceProduct[];
-
-  constructor(private http: HttpClient) { }
+  
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get('https://localhost:5001/api/products?pageSize=10')
-      .subscribe((response: InterfacePaging) => {
-
-      //console.log(response);
-      this.shoppingProducts = response.data;
-
-    }, error =>
-      {
-        console.log(error)
-
-    });
+   
   }
   
   
