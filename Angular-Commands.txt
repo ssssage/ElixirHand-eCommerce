@@ -41,6 +41,9 @@ ng g s store --skip-tests --flat
 In store create new module name as store-routing --flat
 ng g m store-routing --flat 
 
+generate new component in store
+ng g c product-item --skip-tests
+
 
 
 

@@ -8,13 +8,13 @@ import { StoreService } from './store.service';
   styleUrls: ['./store.component.scss']
 })
 export class StoreComponent implements OnInit {
-  shoppingProducts: InterfaceProduct[];
+  storeProducts: InterfaceProduct[];
 
   constructor(private storeService: StoreService) { }
 
   ngOnInit(): void {
     this.storeService.getProducts().subscribe(response => {
-      this.shoppingProducts = response.data
+      this.storeProducts = response.data
     }, error => {
       console.log(error)
 
