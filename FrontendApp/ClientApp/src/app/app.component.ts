@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('https://localhost:5001/api/products?pageSize=50')
+    this.http.get('https://localhost:5001/api/products?pageSize=10')
       .subscribe((response: InterfacePaging) => {
 
       //console.log(response);
