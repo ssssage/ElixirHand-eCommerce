@@ -14,7 +14,7 @@
 
         <h5 class="text-warning ml-3">Brands</h5>
         <ul class="list-group my-3">
-          <li class="list-group-item" *ngFor="let brand of brands"
+          <li class="list-group-item" *ngFor="let brand of storeBrands"
               [class.active]="brand.id === this.storeParams.brandId" [value]="brand.id"
               (click)="onBrandSelected(brand.id)">
             {{brand.name}}
@@ -22,7 +22,7 @@
         </ul>
         <h5 class="text-warning ml-3">Types</h5>
         <ul class="list-group my-3">
-          <li class="list-group-item" *ngFor="let type of types" [class.active]="type.id === this.storeParams.typeId"
+          <li class="list-group-item" *ngFor="let type of storeProductType" [class.active]="type.id === this.storeParams.typeId"
               [value]="type.id" (click)="onTypeSelected(type.id)">
             {{type.name}}
           </li>
@@ -46,7 +46,7 @@
 
 
       <div class="row">
-        <div class="col-4 mb-4" *ngFor="let item of products">
+        <div class="col-4 mb-4" *ngFor="let item of storeProducts">
           <app-product-item [product]="item"></app-product-item>
         </div>
       </div>
