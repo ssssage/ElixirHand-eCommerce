@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { InterfaceProduct } from './Interfaces/product';
-import { InterfacePaging } from './Interfaces/paging';
+import { InterfaceProduct } from './shared/Interfaces/product';
+import { InterfacePaging } from './shared/Interfaces/paging';
 
 @Component({
   selector: 'app-root',
