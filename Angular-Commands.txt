@@ -38,6 +38,9 @@ ng g c store --flat --skip-tests
 In store create new service name as store
 ng g s store --skip-tests --flat 
 
+In store create new module name as store-routing --flat
+ng g m store-routing --flat 
+
 
 
 
