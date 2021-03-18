@@ -11,6 +11,6 @@ export class StoreService {
   constructor(private http: HttpClient) { }
 
   getProducts() {
-    return this.http.get<InterfacePaging>(this.baseUrl + 'products')
+    return this.http.get<InterfacePaging>(this.baseUrl + 'products?pageSize=20')
   }
 }
