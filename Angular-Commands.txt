@@ -35,6 +35,8 @@ ng g m shared
 In store create new component name as store
 ng g c store --flat --skip-tests
 
+In store create new service name as store
+ng g s store --skip-tests --flat 
 
 
 
