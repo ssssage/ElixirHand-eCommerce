@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
+import { IBrand } from '../shared/brand';
 import { InterfaceProduct } from '../shared/Interfaces/product';
+import { IProductType } from '../shared/productType';
 import { StoreService } from './store.service';
 
 
@@ -11,16 +13,39 @@ import { StoreService } from './store.service';
 export class StoreComponent implements OnInit {
  
   storeProducts: InterfaceProduct[];
+  storeBrands: IBrand[];
+  storeProductTypes: IProductType[];
   
 
   constructor(private storeService: StoreService) { }
 
   ngOnInit() {
-       this.storeService.getProducts().subscribe(response => {
+    this.getProducts();
+    this.getBrands();
+    this.getProductTypes();
+  }
+
+  getProducts() {
+    this.storeService.getProducts().subscribe(response => {
       this.storeProducts = response.data;
-     }, error => {
+    }, error => {
       console.log(error);
     });
   }
 
+  getBrands() {
+    this.storeService.getBrands().subscribe(response => {
+      this.storeBrands = response;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getProductTypes() {
+    this.storeService.getProductTypes().subscribe(response => {
+      this.storeProductTypes = response;
+    }, error => {
+      console.log(error);
+    });
+  }
 }
