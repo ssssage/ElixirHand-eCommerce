@@ -1,26 +1,27 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IBrand } from '../shared/brand';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { InterfacePaging } from '../shared/Interfaces/paging';
-import { IProductType } from '../shared/productType';
+//import { IProductType } from '../shared/productType';
+//import { StoreParams } from '../shared/storeParams';
+//import { IBrand } from '../shared/brand';
+//import { InterfaceProduct } from '../shared/Interfaces/product';
+//import { InterfacePaging, Paging } from '../shared/Interfaces/paging';
+//import { map, delay } from 'rxjs/operators';
+//import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
-  baseUrl = 'https://localhost:5001/api/'
-
-  constructor(private http: HttpClient) { }
-
-  getProducts() {
-    return this.http.get<InterfacePaging>(this.baseUrl + 'products?pageSize=20')
-  }
-
-  getBrands() {
-    return this.http.get<IBrand[]>(this.baseUrl + 'products/brands')
-  }
+  baseUrl = 'https://localhost:5001/api/';
   
-  getProductTypes() {
-    return this.http.get<IProductType[]>(this.baseUrl + 'products/types')
+  constructor(private http: HttpClient) { }
+  //useCache: boolean
+  getProducts() {
+    return this.http.get<InterfacePaging>(this.baseUrl + 'products?pageSize=10');
+   
   }
+
+
+ 
 }

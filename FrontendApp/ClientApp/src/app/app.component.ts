@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InterfaceProduct } from './shared/Interfaces/product';
+
 
 
 @Component({
@@ -9,11 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   title = 'ElixirHand Seller Servicess';
-  
+  storeProducts: InterfaceProduct[];
+
+ 
   constructor() { }
 
   ngOnInit(): void {
-   
+  
   }
   
   

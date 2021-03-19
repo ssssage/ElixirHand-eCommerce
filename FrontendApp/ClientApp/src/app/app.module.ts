@@ -9,9 +9,11 @@ import { CoreModule } from './core/core.module';
 import { StoreModule } from './store/store.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+   
   ],
   imports: [
     BrowserModule,
