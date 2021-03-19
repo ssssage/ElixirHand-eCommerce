@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { InterfaceProduct } from '../../shared/Interfaces/product';
 
 
 @Component({
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.scss']
 })
-export class ProductItemComponent{
-  
+export class ProductItemComponent implements OnInit {
+  @Input() product: InterfaceProduct;
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+
+  }
   
 }

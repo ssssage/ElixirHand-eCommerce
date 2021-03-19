@@ -18,7 +18,7 @@ export class StoreService {
   constructor(private http: HttpClient) { }
   //useCache: boolean
   getProducts() {
-    return this.http.get<InterfacePaging>(this.baseUrl + 'products?pageSize=10');
+    return this.http.get<InterfacePaging>(this.baseUrl + 'products?pageSize=50');
    
   }
 
