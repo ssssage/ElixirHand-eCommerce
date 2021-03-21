@@ -15,6 +15,8 @@ export class StoreComponent implements OnInit {
   storeProducts: InterfaceProduct[];
   storeBrands: IBrand[];
   storeProductTypes: IProductType[];
+  brandIdSelected: number;
+  typeIdSelected: number;
   
 
   constructor(private storeService: StoreService) { }
@@ -26,7 +28,7 @@ export class StoreComponent implements OnInit {
   }
 
   getProducts() {
-    this.storeService.getProducts().subscribe(response => {
+    this.storeService.getProducts(this.brandIdSelected, this.typeIdSelected).subscribe(response => {
       this.storeProducts = response.data;
     }, error => {
       console.log(error);
@@ -47,5 +49,15 @@ export class StoreComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  onBrandSelected(brandId: number) {
+    this.brandIdSelected = brandId;
+    this.getProducts();
+  }
+
+  onTypeSelected(typeId: number) {
+    this.typeIdSelected = typeId;
+    this.getProducts();
   }
 }
