@@ -12,10 +12,12 @@ export class StoreService {
   baseUrl = 'https://localhost:5001/api/';
   
   constructor(private http: HttpClient) { }
-  //useCache: boolean
+  
   getProducts() {
     return this.http.get<InterfacePaging>(this.baseUrl + 'products?pageSize=50');
   }
+
+
 
   getBrands() {
     return this.http.get<IBrand[]>(this.baseUrl + 'products/brands');
@@ -25,6 +27,4 @@ export class StoreService {
     return this.http.get<IProductType[]>(this.baseUrl + 'products/types');
   }
 
-
- 
 }

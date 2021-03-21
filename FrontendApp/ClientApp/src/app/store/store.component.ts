@@ -35,7 +35,7 @@ export class StoreComponent implements OnInit {
 
   getBrands() {
     this.storeService.getBrands().subscribe(response => {
-      this.storeBrands = response;
+      this.storeBrands = [{ id: 0, name: 'All' }, ...response];
     }, error => {
       console.log(error);
     });
@@ -43,7 +43,7 @@ export class StoreComponent implements OnInit {
 
   getProductTypes() {
     this.storeService.getProductTypes().subscribe(response => {
-      this.storeProductTypes = response;
+      this.storeProductTypes = [{ id: 0, name: 'All' }, ...response];
     }, error => {
       console.log(error);
     });
