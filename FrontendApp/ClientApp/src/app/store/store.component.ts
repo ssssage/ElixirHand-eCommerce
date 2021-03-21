@@ -15,8 +15,8 @@ export class StoreComponent implements OnInit {
   storeProducts: InterfaceProduct[];
   storeBrands: IBrand[];
   storeProductTypes: IProductType[];
-  brandIdSelected: number;
-  typeIdSelected: number;
+  brandIdSelected = 0;
+  typeIdSelected = 0;
   
 
   constructor(private storeService: StoreService) { }

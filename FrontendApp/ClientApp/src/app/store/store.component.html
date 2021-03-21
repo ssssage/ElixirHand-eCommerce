@@ -9,13 +9,22 @@
       </select>
       <h5 class="text-warning ml-3">Brands</h5>
       <ul class="list-group mb-2">
-        <li class="list-group-item" *ngFor="let brand of storeBrands">
+        <li class="list-group-item"
+            *ngFor="let brand of storeBrands"
+            [class.active]="brand.id === this.brandIdSelected"
+            [value]="brand.id"
+            (click)="onBrandSelected(brand.id)"
+            >
           {{brand.name}}
         </li>        
       </ul>
       <h5 class="text-warning ml-3">Types</h5>
       <ul class="list-group mb-2">
-        <li class="list-group-item" *ngFor="let type of storeProductTypes">
+        <li class="list-group-item" *ngFor="let type of storeProductTypes"
+             [class.active]="type.id === this.typeIdSelected"
+            [value]="type.id"
+            (click)="onTypeSelected(type.id)"
+            >
           {{type.name}}
         </li>
       </ul>
