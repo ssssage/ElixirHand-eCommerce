@@ -15,7 +15,7 @@ export class StoreService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(brandId?: number, typeId?: number) {
+  getProducts(brandId?: number, typeId?: number, sort?: string) {
     let params = new HttpParams();
 
     if (brandId) {
@@ -25,9 +25,16 @@ export class StoreService {
       if (typeId) {
         params = params.append('typeId', typeId.toString());
       }
+
+    if (sort) {
+      params = params.append('sort', sort.toString());
+    }
+
       return this.http.get<InterfacePaging>(this.baseUrl + 'products', { observe: 'response', params })
         .pipe(map(response => { return response.body; }));
-    }
+  }
+
+  
   
   getBrands() {
     return this.http.get<IBrand[]>(this.baseUrl + 'products/brands');
