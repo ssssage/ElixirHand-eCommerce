@@ -44,6 +44,12 @@ ng g m store-routing --flat
 generate new component in store
 ng g c product-item --skip-tests
 
+====
+New-Item -Path "~\shared" -Name "components" -ItemType "directory"
+Create new component called paging-header
+\ClientApp\src\app\shared\components> ng g c paging-header --skip-tests
+ng g c paging-header --skip-tests ==> in shared, components folder thanks
+
 
 
 

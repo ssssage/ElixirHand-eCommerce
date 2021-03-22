@@ -35,20 +35,12 @@
 
     <section class="col-9">
       <div class="d-flex justify-content-between align-items-center pb-2">
-        <header><span *ngIf="totalCount && totalCount > 0">
-          Showing
-                  <strong>
-                    {{(this.storeParams.pageNumber-1) * this.storeParams.pageSize+1}} -
-                    {{this.storeParams.pageNumber * this.storeParams.pageSize
-                    > this.totalCount
-                    ? this.totalCount
-                    : this.storeParams.pageNumber*this.storeParams.pageSize
-                    }}
-                  </strong> of <strong>{{this.totalCount}}</strong> Results</span>
-                <span *ngIf="totalCount===0">
-                  There are <strong>0</strong> results for this filter
-                </span>
-        </header>
+        <app-paging-header
+                    [totalCount]="totalCount"
+                    [pageSize]="this.storeParams.pageSize"
+                    [pageNumber]="this.storeParams.pageNumber"
+        >
+        </app-paging-header>
         
         <div class="form-inline mt-2">
           <input class="form-control mr-2" style="width:300px" placeholder="Search" type="text">
