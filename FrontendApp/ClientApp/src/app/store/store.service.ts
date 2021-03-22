@@ -4,6 +4,8 @@ import { InterfacePaging } from '../shared/Interfaces/paging';
 import { IProductType } from '../shared/productType';
 import { map } from 'rxjs/operators';
 import { IBrand } from '../shared/brand';
+import { StoreParams } from '../shared/Interfaces/storeParams';
+
 
 
 
@@ -15,20 +17,20 @@ export class StoreService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(brandId?: number, typeId?: number, sort?: string) {
+  getProducts(storeParams: StoreParams) {
     let params = new HttpParams();
 
-    if (brandId) {
-      params = params.append('brandId', brandId.toString());
+    if (storeParams.brandId !== 0) {
+      params = params.append('brandId', storeParams.brandId.toString());
     }
 
-      if (typeId) {
-        params = params.append('typeId', typeId.toString());
+    if (storeParams.typeId !== 0) {
+      params = params.append('typeId', storeParams.typeId.toString());
       }
 
-    if (sort) {
-      params = params.append('sort', sort.toString());
-    }
+    params = params.append('sort', storeParams.sort);
+    params = params.append('pageIndex', storeParams.pageNumber.toString());
+    params = params.append('pageSize', storeParams.pageSize.toString());
 
       return this.http.get<InterfacePaging>(this.baseUrl + 'products', { observe: 'response', params })
         .pipe(map(response => { return response.body; }));
