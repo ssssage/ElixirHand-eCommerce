@@ -7,8 +7,10 @@
     
   # Technologies
   For backend development we used 
-  * C#
+  * C#, HTML, SASS, Bootstrap, TypeScript, JSON, SQL
   * ASP.NET CORE APIs
+  * NodeJs, NPM
+  * Angular framework
   * Web APIs
   * MySQL Database
   * Entity framework core
