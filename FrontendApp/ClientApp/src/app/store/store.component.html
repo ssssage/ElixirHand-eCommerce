@@ -43,11 +43,12 @@
         </app-paging-header>
         
         <div class="form-inline mt-2">
-          <input class="form-control mr-2" style="width:300px" placeholder="Search" type="text">
-          <button class="btn btn-outline-primary my-2">Search</button>
-          <button class="btn btn-outline-success ml-2 my-2">Reset</button>
+          <input (keyup.enter)="onSearch()" class="form-control mr-2" #search style="width: 300px" placeholder="Search" type="text">
+          <button (click)="onSearch()" class="btn btn-outline-primary my-2">Search</button>
+          <button (click)="onReset()" class="btn btn-outline-success ml-2 my-2">Reset</button>
 
         </div>
+
       </div>
       <div class="row">
         <div class="col-4 mb-4" *ngFor="let item of storeProducts">
