@@ -42,13 +42,25 @@
           <button class="btn btn-outline-success ml-2 my-2">Reset</button>
 
         </div>
-        </div>
+      </div>
       <div class="row">
         <div class="col-4 mb-4" *ngFor="let item of storeProducts">
           <app-product-item [product]="item"></app-product-item>
         </div>
       </div>
+      <div class="d-flex justify-content-center">
+      <pagination
+                  [boundaryLinks]="true"
+                  [totalItems]="77"
+                  previousText="&lsaquo;"
+                  nextText="&rsaquo;"
+                  firstText="&laquo;"
+                  lastText="&raquo;">
+
+      </pagination>
+      </div>
     </section>
+
   </div>
 
 </div>
