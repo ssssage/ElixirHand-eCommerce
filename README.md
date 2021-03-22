@@ -1,5 +1,6 @@
 # ElixirHand-Seller-Services
  
+ ElixirHand-Seller-Services is an open-source ongoing e-Commerce project based on Angular, Bootstrap, SASS, TypeScript, and ASP.NET Core WEB API.
 
 We are a 
 * Design & Development 
