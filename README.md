@@ -7,8 +7,8 @@
     
   # Technologies
   For backend development we used 
-  * C#, HTML, SASS, Bootstrap, TypeScript, JSON, SQL
-  * ASP.NET CORE APIs
+  * C#, HTML, SASS, Bootstrap, TypeScript, JavaScript, JSON, SQL
+  * ASP.NET CORE APIs, Dependency Injection 
   * NodeJs, NPM
   * Angular framework
   * Web APIs
