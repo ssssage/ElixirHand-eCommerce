@@ -5,6 +5,7 @@ import { IProductType } from '../shared/productType';
 import { map } from 'rxjs/operators';
 import { IBrand } from '../shared/brand';
 import { StoreParams } from '../shared/Interfaces/storeParams';
+import { InterfaceProduct } from '../shared/Interfaces/product';
 
 
 
@@ -40,7 +41,11 @@ export class StoreService {
         .pipe(map(response => { return response.body; }));
   }
 
-  
+
+  getProduct(id: number) {
+    return this.http.get<InterfaceProduct>(this.baseUrl + 'products/' + id);
+  }
+
   
   getBrands() {
     return this.http.get<IBrand[]>(this.baseUrl + 'products/brands');
