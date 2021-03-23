@@ -2,9 +2,10 @@
   <!--<h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>-->
   <img src="assets/images/ElixirHand.png" style="max-height:70px" alt="logo" routerLink="/">
     <nav class="my-2 my-md-0 mr-md-3 text-uppercase" style="font-size:larger">
-    <a class="p-2 text-dark" href="#">Home</a>
-    <a class="p-2 text-dark" href="#">Products</a>
-    <a class="p-2 text-dark" href="#">Contact</a>
+    <a class="p-2" [routerLink]="['/']" routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}" >Home</a>
+    <a class="p-2" routerLink="/store" routerLinkActive="active">Products</a>
+    <a class="p-2" routerLink="/contact" routerLinkActive="active">Contact</a>
   </nav>
   <div class="d-flex align-items-center">
     <a class="position-relative">
