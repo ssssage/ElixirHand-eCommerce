@@ -50,6 +50,16 @@ Create new component called paging-header
 \ClientApp\src\app\shared\components> ng g c paging-header --skip-tests
 ng g c paging-header --skip-tests ==> in shared, components folder thanks
 
+=====To setup routing we need another module in app folder====
+ng g m home
+cd home
+ng g c home --skip-tests --flat
+
+cd ..
+cd store
+ng g c product-details --skip-tests
+
+
 
 
 
