@@ -73,6 +73,9 @@ ng g c not-found --skip-tests
 
 ng g c server-error --skip-tests
 
+After create new folder called Interceptors
+add new file error.interceptor.ts
+
 
 
 
