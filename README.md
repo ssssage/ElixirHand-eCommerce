@@ -6,7 +6,7 @@
   Endpoints are consumed by a angular based Client App.
     
   # Technologies
-  For backend development we used 
+  A list of technologiy flavours I've used are  
   * C#, HTML, SASS, Bootstrap, TypeScript, JavaScript, JSON, SQL
   * ASP.NET CORE APIs, Dependency Injection 
   * NodeJs, NPM
