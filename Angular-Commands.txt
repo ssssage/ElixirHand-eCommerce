@@ -61,13 +61,17 @@ ng g c product-details --skip-tests
 
 
 
+============Front-end development app's Error Handling=====
+Inside the core create new test-error component 
+ng g c test-error --skip-tests 
 
+To get this component inside app-rooting module add a routes
 
+===More components needed inside core===============
 
+ng g c not-found --skip-tests
 
-
-
-
+ng g c server-error --skip-tests
 
 
 
