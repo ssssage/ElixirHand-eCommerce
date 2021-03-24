@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TestErrorComponent } from './core/test-error/test-error.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -7,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'test-error', component: TestErrorComponent },
   { path: 'store', loadChildren: () => import('./store/store.module').then(mod => mod.StoreModule), data: { breadcrumb: 'Store' } },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
