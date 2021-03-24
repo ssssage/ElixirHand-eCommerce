@@ -3,7 +3,7 @@
 
 # Project Description
   This project is built upon restful web api using asp.net core that access the database using Entity Framework Core. 
-  Endpoints are consumed by a angular based Client App and it has features such as
+  Endpoints are consumed by a angular based Client App.
     
   # Technologies
   For backend development we used 
@@ -22,4 +22,4 @@
   * Redis to store the shopping basket
   * Orders from shopping basket
   * Payments Handling via Stripe (new EU standards and 3D secure)
-  * An much more
+  * And much more
