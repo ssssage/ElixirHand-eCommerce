@@ -4,7 +4,7 @@ import { StoreComponent } from './store.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { RouterModule } from '@angular/router';
+import { StoreRoutingModule } from './store-routing.module';
 
 
 
@@ -14,8 +14,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
-  ],
-  exports: [StoreComponent]
+    StoreRoutingModule
+  ]
+
 })
 export class StoreModule { }
