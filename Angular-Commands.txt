@@ -1,7 +1,7 @@
 Clonning the Project
-git remote add origin https://github.com/ssssage/ElixirHand-Seller-Services.git
+git remote add origin https://github.com/saeers/eCommerce-Services.git
 
-git clone https://github.com/ssssage/ElixirHand-Seller-Services.git
+git clone https://github.com/saeers/eCommerce-Services.git
 
 
 
@@ -75,6 +75,9 @@ ng g c server-error --skip-tests
 
 After create new folder called Interceptors
 add new file error.interceptor.ts
+
+Create new section-header component
+ng g c section-header --skip-tests
 
 
 
