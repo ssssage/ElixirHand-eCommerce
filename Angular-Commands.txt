@@ -1,7 +1,7 @@
 Clonning the Project
-git remote add origin https://github.com/ssssage/ElixirHand-Seller-Services.git
+git remote add origin https://github.com/ssssage/eCommerce-Services.git
 
-git clone https://github.com/ssssage/ElixirHand-Seller-Services.git
+git clone https://github.com/ssssage/eCommerce-Services.git
 
 
 
@@ -9,6 +9,8 @@ git clone https://github.com/ssssage/ElixirHand-Seller-Services.git
 Install Node, NPM
 Install Angular
 npm install -g @angular/cli
+
+Check angular version ng --version
 
 Create New Angular App
 ng new ClientApp
@@ -75,6 +77,10 @@ ng g c server-error --skip-tests
 
 After create new folder called Interceptors
 add new file error.interceptor.ts
+
+
+Installing HTTPS Certificate
+open certmgr.msc
 
 
 
