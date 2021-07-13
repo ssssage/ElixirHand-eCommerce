@@ -19,7 +19,7 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
     RouterModule,   
     BreadcrumbModule,
     ToastNoAnimationModule.forRoot({
-      positionClass: 'toast-bottom-right',
+      positionClass: 'toast-bottom-left',
       preventDuplicates: true
     })
   ],
