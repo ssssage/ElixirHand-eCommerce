@@ -78,3 +78,6 @@ add new file error.interceptor.ts
 
 Create new section-header component
 ng g c section-header --skip-tests
+
+Adding BreadCrumbs
+npm install --save xng-breadcrumb
