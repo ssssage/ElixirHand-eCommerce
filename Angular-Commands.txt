@@ -91,3 +91,9 @@ create new file error.ts
 
 It is time to change the bootstrap theme
 npm install bootswatch 
+
+Adding loading indicators or spinners
+npm install ngx-spinner --save
+
+create new folder services in core and add new service called engage
+ng g s engage --flat --skip-tests
