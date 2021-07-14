@@ -89,5 +89,5 @@ npm install ngx-toastr --save
 create new folder called Interceptors 
 create new file error.ts
 
-
-
+It is time to change the bootstrap theme
+npm install bootswatch 
