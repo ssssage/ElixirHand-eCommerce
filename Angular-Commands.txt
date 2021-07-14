@@ -97,3 +97,7 @@ npm install ngx-spinner --save
 
 create new folder services in core and add new service called engage
 ng g s engage --flat --skip-tests
+
+npm install typescript@">=3.6.4 <3.8.0"
+npm install typescript@">=4.2.3 <4.4.0"
+npm install -g typescript@3.6.4
