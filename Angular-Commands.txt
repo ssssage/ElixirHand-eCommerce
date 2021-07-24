@@ -4,6 +4,27 @@ git remote add origin https://github.com/saeers/eCommerce-Services.git
 git clone https://github.com/saeers/eCommerce-Services.git
 
 
+Check if there is any valid certificate
+dotnet dev-certs https
+
+trust the certificate 
+dotnet dev-certs https -t
+
+To check what is installed in ASP.NET Core project
+dotnet --info
+
+Check if tools are installed
+dotnet tool list -g
+
+Install them 
+dotnet tool install --global dotnet-ef --version 5.0.8
+
+dotnet-ef -h
+
+How to add migration
+dotnet ef migrations add InitialCreate -o Data/Migrations
+
+
 
 ======================================================================================
 Install Node, NPM
@@ -78,6 +99,7 @@ add new file error.interceptor.ts
 
 Create new section-header component
 ng g c section-header --skip-tests
+
 
 
 
