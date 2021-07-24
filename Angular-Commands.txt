@@ -100,14 +100,32 @@ add new file error.interceptor.ts
 Create new section-header component
 ng g c section-header --skip-tests
 
+Adding BreadCrumbs
+npm install --save xng-breadcrumb
+
+
+Adding toast notifications
+npm install ngx-toastr --save
+
+create new folder called Interceptors 
+create new file error.ts
+
+It is time to change the bootstrap theme
+npm install bootswatch 
+
+Adding loading indicators or spinners
+npm install ngx-spinner --save
+
+create new folder services in core and add new service called engage
+ng g s engage --flat --skip-tests
+
+<<<<<<< HEAD
 
 
 
 
-
-
-
-
-
-
-
+=======
+npm install typescript@">=3.6.4 <3.8.0"
+npm install typescript@">=4.2.3 <4.4.0"
+npm install -g typescript@3.6.4
+>>>>>>> 7ecde5f2fdc2afd6de63f31251e0980ddf6a95a1

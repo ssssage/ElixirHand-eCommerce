@@ -13,7 +13,7 @@ import { StoreService } from './store.service';
   styleUrls: ['./store.component.scss']
 })
 export class StoreComponent implements OnInit {
-  @ViewChild('search', { static: true }) searchTerm: ElementRef
+  @ViewChild('search', { static: false }) searchTerm: ElementRef
   storeProducts: InterfaceProduct[];
   storeBrands: IBrand[];
   storeProductTypes: IProductType[];

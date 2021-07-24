@@ -6,6 +6,8 @@ import { TestErrorComponent } from './test-error/test-error.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ServerErrorComponent } from './server-error/server-error.component';
 import { SectionHeaderComponent } from './section-header/section-header.component';
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 
 
 
@@ -14,7 +16,12 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
   declarations: [TopNavBarComponent, TestErrorComponent, NotFoundComponent, ServerErrorComponent, SectionHeaderComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,   
+    BreadcrumbModule,
+    ToastNoAnimationModule.forRoot({
+      positionClass: 'toast-bottom-left',
+      preventDuplicates: true
+    })
   ],
   exports: [
     TopNavBarComponent,
