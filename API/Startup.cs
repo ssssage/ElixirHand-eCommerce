@@ -34,7 +34,7 @@ namespace API
             x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
 
             //To connect with Redis database
-            services.AddSingleton<ConnectionMultiplexer>(c =>
+            services.AddSingleton<IConnectionMultiplexer>(c =>
             {
                 var configuration = ConfigurationOptions.Parse(_config
                     .GetConnectionString("Redis"), true);

@@ -36,6 +36,35 @@ Setting up Redis
 Install nuget package StackExchange 
 
 
+Installing Redis on Windows: 
+Step 1: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Step 2: choco install redis-64
+Run the Server: Redis-Server.exe
+redis-cli.exe KEYS '*'
+Check if redis contains data in cart
+https://localhost:5001/api/cart?id=cart1
+
+Add new cart data
+{
+	"id": "cart1",
+	"items": [
+	{
+		"id": 17,
+      		"name": "Angular Purple Boots",
+    		"price": 150,
+		"quantity": 1,
+      		"pictureUrl": "https://localhost:5001/images/products/boot-ang2.png",
+      		"productType": "Boots",
+      		"productBrand": "Angular"
+
+	}
+	]
+
+}
+
+type quit when to stop redis
+Or redis-cli
+shutdown
 ======================================================================================
 Install Node, NPM
 Install Angular
