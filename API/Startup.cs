@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
 
 namespace API
 {
@@ -32,8 +33,15 @@ namespace API
             services.AddDbContext<ElixirHandShopContext>(x =>
             x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
 
-            services.AddApplicationServices();
+            //To connect with Redis database
+            services.AddSingleton<ConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(_config
+                    .GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
 
+            services.AddApplicationServices();
             services.AddSwaggerDocumentation();
             services.AddCors(); // Make sure you call this previous to AddMvc
 

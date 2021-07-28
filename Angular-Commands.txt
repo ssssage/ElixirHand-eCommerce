@@ -1,5 +1,5 @@
 Clonning the Project
-git remote add origin https://github.com/saeers/eCommerce-Services.git
+git remote add origin https://github.com/ssssage/eCommerce-Services.git
 
 git clone https://github.com/saeers/eCommerce-Services.git
 
@@ -24,6 +24,16 @@ dotnet-ef -h
 How to add migration
 dotnet ef migrations add InitialCreate -o Data/Migrations
 
+Drop the database if exists or create new migrations in the root of the project
+dotnet ef database drop -p Infrastructure -s API/
+dotnet ef migrations remove -p Infrastructure -s API/
+
+To add new migration use the following command
+dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migrations
+
+
+Setting up Redis
+Install nuget package StackExchange 
 
 
 ======================================================================================
