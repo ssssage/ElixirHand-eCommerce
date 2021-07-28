@@ -2,6 +2,7 @@
 using Core.Interfaces;
 using StackExchange.Redis;
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Data
@@ -14,19 +15,26 @@ namespace Infrastructure.Data
         {
             _database = redis.GetDatabase();
         }
-        public Task<bool> DeleteCartAsync(string cartId)
+        public async Task<bool> DeleteCartAsync(string cartId)
         {
-            throw new NotImplementedException();
+            return await _database.KeyDeleteAsync(cartId);
         }
 
-        public Task<ClientCart> GetCartAsync(string cartId)
+        public async Task<ClientCart> GetCartAsync(string cartId)
         {
-            throw new NotImplementedException();
+            var data = await _database.StringGetAsync(cartId);
+
+            return data.IsNullOrEmpty ? null : JsonSerializer.Deserialize<ClientCart>(data);
         }
 
-        public Task<ClientCart> UpdateCartAsync(ClientCart clientCart)
+        public async Task<ClientCart> UpdateCartAsync(ClientCart clientCart)
         {
-            throw new NotImplementedException();
+            var created = await _database.StringSetAsync(clientCart.Id,
+               JsonSerializer.Serialize(clientCart), TimeSpan.FromDays(2));
+
+            if (!created) return null;
+
+            return await GetCartAsync(clientCart.Id);
         }
     }
 }
