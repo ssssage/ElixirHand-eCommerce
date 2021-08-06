@@ -35,7 +35,7 @@ export class CartService {
     .pipe(
       map((cart: ICart) => {
         this.cartSource.next(cart);
-        console.log(this.getCurrentCartValue())
+        this.calculateTotals();
       })
     );
   }
@@ -44,6 +44,7 @@ export class CartService {
   setCart(cart: ICart){
     return this.http.post(this.baseUrl + 'cart', cart).subscribe((response: ICart) => {
       this.cartSource.next(response);
+      this.calculateTotals();
     }, error => {
       console.log(error);
     });
@@ -61,6 +62,61 @@ export class CartService {
     cart.items = this.addOrUpdateItem(cart.items, itemToAdd, quantity);
     this.setCart(cart);
   }
+
+  incrementItemQuantity(item: ICartItem) {
+    const cart = this.getCurrentCartValue();
+    const foundItemIndex = cart.items.findIndex(x => x.id === item.id);
+    cart.items[foundItemIndex].quantity++;
+    this.setCart(cart);
+  }
+
+  decrementItemQuantity(item: ICartItem) {
+    const cart = this.getCurrentCartValue();
+    const foundItemIndex = cart.items.findIndex(x => x.id === item.id);
+    if (cart.items[foundItemIndex].quantity > 1) {
+      cart.items[foundItemIndex].quantity--;
+      this.setCart(cart);
+    } else {
+      this.removeItemFromCart(item);
+    }
+  }
+
+  removeItemFromCart(item: ICartItem) {
+    const cart = this.getCurrentCartValue();
+    if (cart.items.some(x => x.id === item.id)) {
+      cart.items = cart.items.filter(i => i.id !== item.id);
+      if (cart.items.length > 0) {
+        this.setCart(cart);
+      } else {
+        this.deleteCart(cart);
+      }
+    }
+  }
+
+  deleteLocalCart(id: string) {
+    this.cartSource.next(null);
+    this.cartTotalSource.next(null);
+    localStorage.removeItem('cart_id');
+  }
+
+  deleteCart(cart: ICart) {
+    return this.http.delete(this.baseUrl + 'cart?id=' + cart.id).subscribe(() => {
+      this.cartSource.next(null);
+      this.cartTotalSource.next(null);
+      localStorage.removeItem('cart_id');
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  private calculateTotals() {
+    const cart = this.getCurrentCartValue();
+    const shipping = this.shipping;
+    const subtotal = cart.items.reduce((a, b) => (b.price * b.quantity) + a, 0);
+    const total = subtotal + shipping;
+    this.cartTotalSource.next({ shipping, total, subtotal });
+  }
+
 
   private addOrUpdateItem(items: ICartItem[], itemToAdd: ICartItem, quantity: number): ICartItem[] {
     console.log(items);
