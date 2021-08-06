@@ -18,7 +18,7 @@ export interface ICart {
 
 export class Cart implements ICart{
     id = uuidv4();
-    cartItems: ICartItem[];
+    cartItems: ICartItem[] = [];
 
 }
 

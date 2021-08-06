@@ -50,8 +50,8 @@ export class CartService {
     return this.cartSource.value;
   }
 
-  addItemToBasket(item: InterfaceProduct, quantity = 1) {
-    const itemToAdd: ICartItem = this.mapProductItemToBasketItem(item, quantity);
+  addItemToCart(item: InterfaceProduct, quantity = 1) {
+    const itemToAdd: ICartItem = this.mapProductItemToCartItem(item, quantity);
     let cart = this.getCurrentCartValue();
     if (cart === null) {
       cart = this.createCart();
@@ -61,6 +61,7 @@ export class CartService {
   }
 
   private addOrUpdateItem(items: ICartItem[], itemToAdd: ICartItem, quantity: number): ICartItem[] {
+    console.log(items);
     const index = items.findIndex(i => i.id === itemToAdd.id);
     if (index === -1) {
       itemToAdd.quantity = quantity;
@@ -73,11 +74,11 @@ export class CartService {
 
   private createCart(): ICart {
     const cart = new Cart();
-    localStorage.setItem('basket_id', cart.id);
+    localStorage.setItem('cart_id', cart.id);
     return cart;
   }
 
-  private mapProductItemToBasketItem(item: InterfaceProduct, quantity: number): ICartItem {
+  private mapProductItemToCartItem(item: InterfaceProduct, quantity: number): ICartItem {
     return {
       id: item.id,
       name: item.name,
