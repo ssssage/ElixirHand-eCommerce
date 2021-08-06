@@ -16,7 +16,10 @@ const routes: Routes = [
   {path: 'test-error', component: TestErrorComponent, data: {breadcrumb: 'Test Errors'}},
   {path: 'server-error', component: ServerErrorComponent, data: { breadcrumb: 'Server Errors'}},
   {path: 'not-found', component: NotFoundComponent, data: { breadcrumb: 'Not Found' } },
-  {path: 'store', loadChildren: () => import('./store/store.module').then(mod => mod.StoreModule), data: {breadcrumb: 'Store'}},
+  {path: 'store', loadChildren: () => import('./store/store.module').then(mod => mod.StoreModule), 
+  data: {breadcrumb: 'Store'}},
+  {path: 'cart', loadChildren: () => import('./cart/cart.module').then(mod => mod.CartModule), 
+  data: {breadcrumb: 'Cart'}},
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
 ];
 
