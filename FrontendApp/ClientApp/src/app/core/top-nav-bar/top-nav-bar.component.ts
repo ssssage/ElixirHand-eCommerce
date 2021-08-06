@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CartService } from '../../cart/cart.service';
+import { ICart } from '../../shared/Interfaces/cart';
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavBarComponent implements OnInit {
 
-  constructor() { }
+  cart$: Observable<ICart>;
+
+  constructor(private cartService: CartService) { }
+
 
   ngOnInit(): void {
+    this.cart$ = this.cartService.cart$;
   }
 
 }
