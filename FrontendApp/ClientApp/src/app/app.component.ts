@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { InterfaceProduct } from './shared/Interfaces/product';
-
+    import { Component, OnInit } from '@angular/core';
+    import { CartService } from './cart/cart.service';
+ 
 
 
 @Component({
@@ -10,15 +10,22 @@ import { InterfaceProduct } from './shared/Interfaces/product';
 })
 export class AppComponent implements OnInit {
 
-  title = 'ElixirHand Seller Servicess';
-  storeProducts: InterfaceProduct[];
+  title = 'E-Commerce Services';
 
- 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-  
+    const cartId = localStorage.getItem("cart_id");
+
+    if (cartId) {
+      this.cartService.getCart(cartId).subscribe(() => {
+        console.log("Initialised cart");
+      }, error => {
+        console.log(error);
+      });
+
+    }
+
   }
-  
-  
+
 }

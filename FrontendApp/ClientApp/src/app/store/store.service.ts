@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { IBrand } from '../shared/brand';
 import { StoreParams } from '../shared/Interfaces/storeParams';
 import { InterfaceProduct } from '../shared/Interfaces/product';
+import { environment } from '../../environments/environment';
 
 
 
@@ -14,7 +15,7 @@ import { InterfaceProduct } from '../shared/Interfaces/product';
   providedIn: 'root'
 })
 export class StoreService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 

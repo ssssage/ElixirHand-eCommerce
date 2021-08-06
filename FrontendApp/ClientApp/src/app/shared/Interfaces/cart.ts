@@ -1,9 +1,8 @@
-import {v4 as uuidv4} from 'uuid';
-
+import { v4 as uuidv4 } from 'uuid';
 
 export interface ICart {
     id: string;
-    cartItems: ICartItem[];
+    items: ICartItem[];
 }
 
  export interface ICartItem {
@@ -18,7 +17,7 @@ export interface ICart {
 
 export class Cart implements ICart{
     id = uuidv4();
-    cartItems: ICartItem[] = [];
+    items: ICartItem[] = [];
 
 }
 

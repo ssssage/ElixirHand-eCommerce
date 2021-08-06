@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import {ICart, ICartItem, Cart} from '../shared/Interfaces/cart';
+import {ICart, ICartItem, Cart, ICartTotals} from '../shared/Interfaces/cart';
 import { InterfaceProduct } from '../shared/Interfaces/product';
 
 @Injectable({
@@ -19,6 +19,11 @@ export class CartService {
 
   //To make accessible above observable 
   cart$ = this.cartSource.asObservable();
+
+  private cartTotalSource = new BehaviorSubject<ICartTotals>(null);
+
+  cartTotal$ = this.cartTotalSource.asObservable();
+  shipping = 0;
   
   // injecting http client
   constructor(private http: HttpClient) { }
@@ -26,11 +31,11 @@ export class CartService {
   //This is will get cart item based on ID
   getCart(id: string){
     return this.http.get(this.baseUrl + 'cart?id=' + id)
-    
-    //use an RxJS reactive pipe (or data stream) to reshape the structure of data coming from the external API
+     //use an RxJS reactive pipe (or data stream) to reshape the structure of data coming from the external API
     .pipe(
       map((cart: ICart) => {
         this.cartSource.next(cart);
+        console.log(this.getCurrentCartValue())
       })
     );
   }
@@ -52,11 +57,8 @@ export class CartService {
 
   addItemToCart(item: InterfaceProduct, quantity = 1) {
     const itemToAdd: ICartItem = this.mapProductItemToCartItem(item, quantity);
-    let cart = this.getCurrentCartValue();
-    if (cart === null) {
-      cart = this.createCart();
-    }
-    cart.cartItems = this.addOrUpdateItem(cart.cartItems, itemToAdd, quantity);
+    const cart = this.getCurrentCartValue() ?? this.createCart();
+    cart.items = this.addOrUpdateItem(cart.items, itemToAdd, quantity);
     this.setCart(cart);
   }
 
