@@ -180,4 +180,10 @@ ng g s cart --flat --skip-tests
 
 To setup the roots and to setup the lazyloading inside our app-routing module 
 
+=====================
+Further install package in client app level, this is a utility that gives unique identifier
+npm install uuid
 
+on installing uuid v7, import {v4 as uuidv4} from 'uuid'
+
+id = uuidv4();
