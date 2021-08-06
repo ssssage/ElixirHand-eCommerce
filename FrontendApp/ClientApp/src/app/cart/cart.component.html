@@ -1,1 +1,13 @@
-<p>cart works!</p>
+<div class="container mt-5">
+  <div *ngIf="(cart$ | async) === null">
+    <p>There are no items in your cart</p>
+  </div>
+
+  <div *ngIf="(cart$ | async) as cart">
+    <ul>
+      <li *ngFor="let item of cart.items">
+        {{item.name}} - {{item.quantity}}
+      </li>
+    </ul>
+  </div>
+</div>
