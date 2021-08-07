@@ -187,3 +187,11 @@ npm install uuid
 on installing uuid v7, import {v4 as uuidv4} from 'uuid'
 
 id = uuidv4();
+=========================================
+Creating new feature module at App level
+ng g m checkout
+cd checkout
+ng g m checkout-routing --flat
+ng g s checkout --flat --skip-tests
+ng g c checkout --flat --skip-tests
+

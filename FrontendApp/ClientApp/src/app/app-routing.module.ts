@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { StoreComponent } from './store/store.component';
-import { ProductDetailsComponent } from './store/product-details/product-details.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { ServerErrorComponent } from './core/server-error/server-error.component';
 import { TestErrorComponent } from './core/test-error/test-error.component';
@@ -20,6 +18,8 @@ const routes: Routes = [
   data: {breadcrumb: 'Store'}},
   {path: 'cart', loadChildren: () => import('./cart/cart.module').then(mod => mod.CartModule), 
   data: {breadcrumb: 'Cart'}},
+  {path: 'checkout', loadChildren: () => import('./checkout/checkout.module')
+   .then(mod => mod.CheckoutModule), data: { breadcrumb: 'Ceckout' }},
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
 ];
 
