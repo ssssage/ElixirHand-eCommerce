@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbService } from 'xng-breadcrumb';
+import { CartService } from '../../cart/cart.service';
 import { InterfaceProduct } from '../../shared/Interfaces/product';
 import { StoreService } from '../store.service';
 
@@ -11,15 +12,30 @@ import { StoreService } from '../store.service';
 })
 export class ProductDetailsComponent implements OnInit {
   product: InterfaceProduct;
+  quantity = 1;
 
   constructor(private storeService: StoreService,
-              private activateRoute: ActivatedRoute,
-    private bcService: BreadcrumbService) {
+    private activateRoute: ActivatedRoute,
+    private bcService: BreadcrumbService,
+    private cartService: CartService) {
     this.bcService.set('@productDetails',' ');
   }
 
   ngOnInit(): void {
     this.loadProductDetail();
+  }
+
+  addItemToCart() {
+    this.cartService.addItemToCart(this.product, this.quantity);
+  }
+
+  incrementQuantity() {
+    this.quantity++;
+  }
+
+  decrementQuantity() {
+    if (this.quantity > 1) { this.quantity--; }
+    
   }
 
   loadProductDetail() {
