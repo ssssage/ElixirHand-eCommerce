@@ -9,7 +9,7 @@ namespace API.Dtos
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string ProductName { get; set; }
 
         [Required]
         [Range(0.1, double.MaxValue, ErrorMessage = "Price must be greater than zero")]
@@ -23,9 +23,9 @@ namespace API.Dtos
         public string PictureUrl { get; set; }
 
         [Required]
-        public string ProductBrand { get; set; }
+        public string Brand { get; set; }
 
         [Required]
-        public string ProductType { get; set; }
+        public string Type { get; set; }
     }
 }

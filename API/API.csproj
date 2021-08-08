@@ -7,10 +7,6 @@
     <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Dtos\CartItemDto.cs" />
-    <Compile Remove="Dtos\ClientCartDto.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
   <ItemGroup>

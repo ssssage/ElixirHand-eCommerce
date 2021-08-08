@@ -13,9 +13,11 @@ namespace API.Controllers
     public class CartController : BaseApiController
     {
         private readonly ICartRepository _cartRepository;
+        private readonly IMapper _mapper;
 
-        public CartController(ICartRepository cartRepository)
+        public CartController(ICartRepository cartRepository, IMapper mapper)
         {
+            _mapper = mapper;
             _cartRepository = cartRepository;
         }
         [HttpGet]
@@ -27,11 +29,12 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ClientCart>> UpdateCart(ClientCart cart)
+        public async Task<ActionResult<ClientCart>> UpdateCart(ClientCartDto cart)
         {
-            var updatedBasket = await _cartRepository.UpdateCartAsync(cart);
+            var clientCart = _mapper.Map<ClientCartDto, ClientCart>(cart);
+            var updatedCart = await _cartRepository.UpdateCartAsync(clientCart);
 
-            return Ok(updatedBasket);
+            return Ok(updatedCart);
         }
         
         [HttpDelete]

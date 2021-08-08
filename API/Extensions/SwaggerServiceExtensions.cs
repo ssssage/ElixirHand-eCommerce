@@ -11,6 +11,7 @@ namespace API.Extensions
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ElixirHand API Project", Version = "v1" });
+
             });
 
             return services;
