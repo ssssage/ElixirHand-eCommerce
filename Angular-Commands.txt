@@ -2,6 +2,14 @@ Clonning the Project
 git remote add origin https://github.com/ssssage/eCommerce-Services.git
 
 git clone https://github.com/saeers/eCommerce-Services.git
+=======================================================
+Clone Specific Commit
+git fetch origin [paste here commit SHA] ENTER
+git checkout FETCH_HEAD ENTER
+This commit wont' be able to push back 
+Two Options are available
+1- git checkout master or
+2- git checkout -b "[new branch name]"
 
 
 Check if there is any valid certificate
@@ -39,6 +47,8 @@ Install nuget package StackExchange
 Installing Redis on Windows: 
 Step 1: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 Step 2: choco install redis-64
+choco uninstall redis-64
+choco uninstall memurai-developer.install v2.0.3
 Run the Server: Redis-Server.exe
 redis-cli.exe KEYS '*'
 Check if redis contains data in cart
@@ -194,4 +204,91 @@ cd checkout
 ng g m checkout-routing --flat
 ng g s checkout --flat --skip-tests
 ng g c checkout --flat --skip-tests
+
+
+============================================================================================================================
+********************* IDENTITY *******************************
+
+The packages are required in core project
+Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore -Version 5.0.8
+
+The packages are required in Infrastructure project
+Install-Package Microsoft.AspNetCore.Identity -Version 2.2.0
+Install-Package Microsoft.IdentityModel.Tokens -Version 6.12.0
+Install-Package System.IdentityModel.Tokens.Jwt -Version 6.12.0
+
+Run migration at solution level
+dotnet-ef migrations add IdentityInitial -p Infrastructure -s API -c AppIdentityDbContext -o Identity/Migrations
+
+On error create ==> dotnet new tool-manifest
+dotnet tool install --local dotnet-ef --version 5.0.6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -4,6 +4,7 @@ using API.Helpers;
 using API.Middleware;
 using AutoMapper;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,12 @@ namespace API
             services.AddDbContext<ElixirHandShopContext>(x =>
             x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<AppIdentityDbContext>(x =>
+            {
+                x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+            });
+
+
             //To connect with Redis database
             services.AddSingleton<IConnectionMultiplexer>(c =>
             {
@@ -41,6 +48,7 @@ namespace API
             });
 
             services.AddApplicationServices();
+            services.AddIdentityServices(_config);
             services.AddSwaggerDocumentation();
             services.AddCors(); // Make sure you call this previous to AddMvc
 
@@ -73,7 +81,8 @@ namespace API
            );
 
             app.UseCors("CorsPolicy");
-            
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseSwaggerDocumentation();
