@@ -139,12 +139,12 @@ export class CartService {
   private mapProductItemToCartItem(item: InterfaceProduct, quantity: number): ICartItem {
     return {
       id: item.id,
-      name: item.name,
+      productName: item.name,
       price: item.price,
       pictureUrl: item.pictureUrl,
       quantity,
-      productBrand: item.productBrand,
-      productType: item.productType
+      brand: item.productBrand,
+      type: item.productType
     };
 }
 

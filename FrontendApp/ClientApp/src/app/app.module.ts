@@ -14,10 +14,10 @@ import { LoadingInterceptor } from './core/Interceptors/loading';
 
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,
-   
+    AppComponent   
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { ServerErrorComponent } from './server-error/server-error.component';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -18,6 +19,7 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
     CommonModule,
     RouterModule,   
     BreadcrumbModule,
+    SharedModule,
     ToastNoAnimationModule.forRoot({
       positionClass: 'toast-bottom-left',
       preventDuplicates: true

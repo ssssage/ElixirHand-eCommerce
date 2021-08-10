@@ -7,12 +7,12 @@ export interface ICart {
 
  export interface ICartItem {
     id: number;
-    name: string;
+   productName: string;
     price: number;
     quantity: number;
     pictureUrl: string;
-    productBrand: string;
-    productType:  string;
+    brand: string;
+    type:  string;
 }
 
 export class Cart implements ICart{

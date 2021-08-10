@@ -32,16 +32,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\shared\Interfaces\address.ts" />
+    <None Remove="ClientApp\src\app\shared\Interfaces\user.ts" />
     <None Remove="ClientApp\tsconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\core\guards\" />
     <Folder Include="ClientApp\ssl\" />
     <Folder Include="ClientApp\src\assets\images\" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="ClientApp\tsconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\shared\Interfaces\address.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\Interfaces\user.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

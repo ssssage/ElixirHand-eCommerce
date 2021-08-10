@@ -223,6 +223,29 @@ dotnet-ef migrations add IdentityInitial -p Infrastructure -s API -c AppIdentity
 On error create ==> dotnet new tool-manifest
 dotnet tool install --local dotnet-ef --version 5.0.6
 
+===========================================================
+============================== Setting up Account ======================================
+at app level
+ng g m account
+cd account
+ng g m account-routing --flat
+ng g s account --flat --skip-tests
+ng g c login --skip-tests
+ng g c register --skip-tests
+
+============================
+At components level create new component
+ng g c text-input --skip-tests
+and then import it into shared Module
+=============================================
+At Core level add new folder called guards
+cd guards
+ng g
+ng g g auth --skip-tests
+Which interface would you like to implement 
+select CanActivate
+
+
 
 
 
