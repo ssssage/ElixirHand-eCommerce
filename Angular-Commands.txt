@@ -76,9 +76,11 @@ type quit when to stop redis
 Or redis-cli
 shutdown
 ======================================================================================
-Install Node, NPM
+Install Node, NPM or NVM would be nice to quickly switch the version
+Though, make sure npm 6.13.0 version is installed
+
 Install Angular
-npm install -g @angular/cli
+npm install -g @angular/cli @11.2.1
 
 Create New Angular App
 ng new ClientApp
