@@ -8,14 +8,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ElixirHandShopContext))]
-    [Migration("20200511153343_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20210917120444_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0");
+                .HasAnnotation("ProductVersion", "3.1.8");
 
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
@@ -37,7 +37,7 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Price")
+                    b.Property<double>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductBrandId")
@@ -52,7 +52,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasIndex("ProductTypeId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Core.Entities.ProductBrand", b =>
@@ -66,7 +66,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductBrand");
+                    b.ToTable("ProductBrands");
                 });
 
             modelBuilder.Entity("Core.Entities.ProductType", b =>
@@ -80,7 +80,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductType");
+                    b.ToTable("ProductTypes");
                 });
 
             modelBuilder.Entity("Core.Entities.Product", b =>

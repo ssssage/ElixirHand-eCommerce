@@ -16,7 +16,7 @@ namespace Infrastructure.Data
 			try
 			{
 				//ProductsBrnads Data does not exist
-				if (!context.ProductBrand.Any())
+				if (!context.ProductBrands.Any())
 				{
 					//Then go ahead and read it from the following path and store into brands variable, thanks
 					var brandsData = File.ReadAllText("../Infrastructure/Data/SeedData/brands.json");
@@ -27,14 +27,14 @@ namespace Infrastructure.Data
 					foreach (var item in brands)
 					{
 						//iterate all the item and add them into database
-						context.ProductBrand.Add(item);
+						context.ProductBrands.Add(item);
 					}
 					//Please save them, thanks
 					await context.SaveChangesAsync();
 				}
 
 				//ProductTypes Data does not exist
-				if (!context.ProductType.Any())
+				if (!context.ProductTypes.Any())
 				{
 					//Then go ahead and read it from the following path and store into brands variable, thanks
 					var typesData = File.ReadAllText("../Infrastructure/Data/SeedData/types.json");
@@ -45,7 +45,7 @@ namespace Infrastructure.Data
 					foreach (var item in types)
 					{
 						//iterate all the item and add them into database
-						context.ProductType.Add(item);
+						context.ProductTypes.Add(item);
 					}
 					//Please save them, thanks
 					await context.SaveChangesAsync();
@@ -53,7 +53,7 @@ namespace Infrastructure.Data
 
 
 				//Products Data does not exist
-				if (!context.Product.Any())
+				if (!context.Products.Any())
 				{
 					//Then go ahead and read it from the following path and store into brands variable, thanks
 					var productsData = File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
@@ -64,7 +64,7 @@ namespace Infrastructure.Data
 					foreach (var item in products)
 					{
 						//iterate all the item and add them into database
-						context.Product.Add(item);
+						context.Products.Add(item);
 					}
 					//Please save them, thanks
 					await context.SaveChangesAsync();

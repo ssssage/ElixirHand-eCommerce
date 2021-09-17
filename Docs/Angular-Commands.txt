@@ -33,11 +33,16 @@ How to add migration
 dotnet ef migrations add InitialCreate -o Data/Migrations
 
 Drop the database if exists or create new migrations in the root of the project
-dotnet ef database drop -p Infrastructure -s API/
-dotnet ef migrations remove -p Infrastructure -s API/
+dotnet ef database drop -p Infrastructure -s API -c Infrastructure.Data.ElixirHandShopContext
+
+
+dotnet ef migrations remove -p Infrastructure -s API -c Infrastructure.Data.ElixirHandShopContext
+
 
 To add new migration use the following command
-dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migrations
+dotnet ef migrations add InitialCreate -p Infrastructure -s API -c Infrastructure.Data.ElixirHandShopContext -o Data/Migrations
+
+dotnet ef database update -p Infrastructure -s API -c Infrastructure.Data.ElixirHandShopContext
 
 
 Setting up Redis
@@ -246,6 +251,9 @@ Which interface would you like to implement
 select CanActivate
 
 
+=====================================================
+Run migration at solution level
+dotnet-ef migrations add OrderEntityAdded -p Infrastructure -s API -c ElixirHandShopContext -o Data/Order/Migrations
 
 
 

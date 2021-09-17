@@ -14,9 +14,9 @@ namespace Infrastructure.Data
 
         }
 
-        public DbSet<Product> Product { get; set; }
-        public DbSet<ProductBrand> ProductBrand { get; set; }
-        public DbSet<ProductType> ProductType { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductBrand> ProductBrands { get; set; }
+        public DbSet<ProductType> ProductTypes { get; set; }
 
         //Here we areapplying Product Configuration on migration
         protected override void OnModelCreating(ModelBuilder modelBuilder)

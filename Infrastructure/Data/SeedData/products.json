@@ -1,145 +1,145 @@
-[
+﻿[
   {
-    "ProductName": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "iPhone 12 Pro Max",
+    "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 200,
-    "PictureUrl": "images/products/sb-ang1.png",
+    "PictureUrl": "images/products/slide1.png",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
   {
-    "ProductName": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Name": "iPhone 12 Pro",
+    "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 150,
-    "PictureUrl": "images/products/sb-ang2.png",
+    "PictureUrl": "images/products/slide2.png",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
   {
-    "ProductName": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Name": "iPhone 12",
+    "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 180,
-    "PictureUrl": "images/products/sb-core1.png",
+    "PictureUrl": "images/products/slide3.png",
     "ProductTypeId": 1,
     "ProductBrandId": 2
   },
   {
-    "ProductName": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Name": "iPhone 11 Pro Max",
+    "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 300,
-    "PictureUrl": "images/products/sb-core2.png",
+    "PictureUrl": "images/products/slide4.png",
     "ProductTypeId": 1,
     "ProductBrandId": 2
   },
   {
-    "ProductName": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "Samsung Glaxy S",
+    "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 250,
-    "PictureUrl": "images/products/sb-react1.png",
+    "PictureUrl": "images/products/slide5.png",
     "ProductTypeId": 1,
     "ProductBrandId": 4
   },
   {
-    "ProductName": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Name": "Huawei",
+    "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 120,
-    "PictureUrl": "images/products/sb-ts1.png",
+    "PictureUrl": "images/products/slide6.png",
     "ProductTypeId": 1,
     "ProductBrandId": 5
   },
   {
-    "ProductName": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "Huawei",
+    "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 10,
-    "PictureUrl": "images/products/hat-core1.png",
+    "PictureUrl": "images/products/slide7.png",
     "ProductTypeId": 2,
     "ProductBrandId": 2
   },
   {
-    "ProductName": "Green React Woolen Hat",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Name": "Huawei",
+    "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 8,
-    "PictureUrl": "images/products/hat-react1.png",
+    "PictureUrl": "images/products/slide8.png",
     "ProductTypeId": 2,
     "ProductBrandId": 4
   },
   {
-    "ProductName": "Purple React Woolen Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "Xiaomi",
+    "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 15,
-    "PictureUrl": "images/products/hat-react2.png",
+    "PictureUrl": "images/products/slide9.png",
     "ProductTypeId": 2,
     "ProductBrandId": 4
   },
   {
-    "ProductName": "Blue Code Gloves",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Name": "Xiaomi",
+    "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 18,
-    "PictureUrl": "images/products/glove-code1.png",
+    "PictureUrl": "images/products/slide10.png",
     "ProductTypeId": 4,
     "ProductBrandId": 3
   },
   {
-    "ProductName": "Green Code Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Name": "Oppo",
+    "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 15,
-    "PictureUrl": "images/products/glove-code2.png",
+    "PictureUrl": "images/products/slide11.png",
     "ProductTypeId": 4,
     "ProductBrandId": 3
   },
   {
-    "ProductName": "Purple React Gloves",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
+    "Name": "Nokia",
+    "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A slightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 16,
-    "PictureUrl": "images/products/glove-react1.png",
+    "PictureUrl": "images/products/slide12.png",
     "ProductTypeId": 4,
     "ProductBrandId": 4
   },
   {
-    "ProductName": "Green React Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Name": "Nokia",
+    "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 14,
-    "PictureUrl": "images/products/glove-react2.png",
+    "PictureUrl": "images/products/slide13.png",
     "ProductTypeId": 4,
     "ProductBrandId": 4
   },
   {
-    "ProductName": "Redis Red Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Name": "Samsung",
+    "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 250,
-    "PictureUrl": "images/products/boot-redis1.png",
+    "PictureUrl": "images/products/slide14.png",
     "ProductTypeId": 3,
     "ProductBrandId": 6
   },
   {
-    "ProductName": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "Nokia Pro",
+    "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 189.99,
-    "PictureUrl": "images/products/boot-core2.png",
+    "PictureUrl": "images/products/slide15.png",
     "ProductTypeId": 3,
     "ProductBrandId": 2
   },
   {
-    "ProductName": "Core Purple Boots",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Name": "Samsung S 8",
+    "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 199.99,
-    "PictureUrl": "images/products/boot-core1.png",
+    "PictureUrl": "images/products/slide16.png",
     "ProductTypeId": 3,
     "ProductBrandId": 2
   },
   {
-    "ProductName": "Angular Purple Boots",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Name": "Xiaomi X",
+    "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 150,
-    "PictureUrl": "images/products/boot-ang2.png",
+    "PictureUrl": "images/products/slide17.png",
     "ProductTypeId": 3,
     "ProductBrandId": 1
   },
   {
-    "ProductName": "Angular Blue Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Name": "Huawei Pro",
+    "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 180,
-    "PictureUrl": "images/products/boot-ang1.png",
+    "PictureUrl": "images/products/slide18.png",
     "ProductTypeId": 3,
     "ProductBrandId": 1
   }
