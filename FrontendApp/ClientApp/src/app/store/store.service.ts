@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { InterfacePaging } from '../shared/Interfaces/paging';
-import { IProductType } from '../shared/productType';
 import { map } from 'rxjs/operators';
-import { IBrand } from '../shared/brand';
 import { StoreParams } from '../shared/Interfaces/storeParams';
 import { InterfaceProduct } from '../shared/Interfaces/product';
 import { environment } from '../../environments/environment';
-
-
-
+import { IBrand } from '../shared/models/brand';
+import { IProductType } from '../shared/models/productType';
 
 @Injectable({
   providedIn: 'root'

@@ -10,7 +10,7 @@ namespace API.Controllers
         private readonly ElixirHandShopContext _context;
         public BuggyController(ElixirHandShopContext context)
         {
-            _context = context;
+            _context = context; 
         }
 
         [HttpGet("testauth")]
@@ -23,9 +23,9 @@ namespace API.Controllers
         [HttpGet("notfound")]
         public ActionResult GetNotFoundRequest()
         {
-            var thing = _context.Product.Find(60);
+            var thing = _context.Products.Find(43);
 
-            if (thing == null) 
+            if (thing == null)
             {
                 return NotFound(new ApiResponse(404));
             }
@@ -36,7 +36,7 @@ namespace API.Controllers
         [HttpGet("servererror")]
         public ActionResult GetServerError()
         {
-            var thing = _context.Product.Find(60);
+            var thing = _context.Products.Find(43);
 
             var thingToReturn = thing.ToString();
 

@@ -19,12 +19,12 @@ namespace Infrastructure.Repositories
 
         public async Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync()
         {
-            return await _context.ProductBrand.ToListAsync();
+            return await _context.ProductBrands.ToListAsync();
         }
 
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            return await _context.Product
+            return await _context.Products
                 .Include(p => p.ProductType)
                 .Include(p => p.ProductBrand)
                 .FirstOrDefaultAsync(p => p.Id == id);
@@ -32,7 +32,7 @@ namespace Infrastructure.Repositories
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-               return await _context.Product
+               return await _context.Products
                 .Include(p => p.ProductType)
                 .Include(p => p.ProductBrand)
                 .ToListAsync();
@@ -42,7 +42,7 @@ namespace Infrastructure.Repositories
 
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
         {
-            return await _context.ProductType.ToListAsync();
+            return await _context.ProductTypes.ToListAsync();
         }
     }
 }

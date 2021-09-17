@@ -34,6 +34,8 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\shared\Interfaces\address.ts" />
     <None Remove="ClientApp\src\app\shared\Interfaces\user.ts" />
+    <None Remove="ClientApp\src\app\shared\models\deliveryMethod.ts" />
+    <None Remove="ClientApp\src\app\shared\models\order.ts" />
     <None Remove="ClientApp\tsconfig.json" />
   </ItemGroup>
 
@@ -50,6 +52,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\shared\Interfaces\address.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\Interfaces\user.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\deliveryMethod.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\order.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

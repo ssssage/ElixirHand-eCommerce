@@ -1,3 +1,75 @@
-<div class="container">
-  <h1>Hello here you will see checkout</h1>
+<!--<div class="container mt-5">
+  <div class="row">
+    <div class="col-8">
+      <app-stepper [linearModeSelected]="true" #appStepper>
+        <cdk-step [label]="'Address'" [completed]="(checkoutForm.get('addressForm')).valid">
+          <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
+        </cdk-step>
+        <cdk-step [label]="'Delivery'"
+                  [completed]="(checkoutForm.get('deliveryForm')).valid">
+          <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
+        </cdk-step>
+        <cdk-step [label]="'Review'">
+          <app-checkout-review [appStepper]="appStepper"></app-checkout-review>
+        </cdk-step>
+        <cdk-step [label]="'Payment'">
+          <app-checkout-payment [checkoutForm]="checkoutForm"></app-checkout-payment>
+        </cdk-step>
+      </app-stepper>
+    </div>
+    <div class="col-4">
+      <app-order-totals *ngIf="(cartTotals$ | async)"
+                        [shippingPrice]="(cartTotals$ | async).shipping"
+                        [subtotal]="(cartTotals$ | async).subtotal"
+                        [total]="(cartTotals$ | async).total"></app-order-totals>
+    </div>
+  </div>
+</div>-->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-8">
+      <app-stepper [linearModeSelected]="false" #appStepper>
+        <cdk-step [label]="'Address'" [completed]="(checkoutForm.get('addressForm')).valid">
+          <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
+        </cdk-step>
+        <cdk-step [label]="'Delivery'"
+                  [completed]="(checkoutForm.get('deliveryForm')).valid">
+          <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
+        </cdk-step>
+        <cdk-step [label]="'Review'">
+          <app-checkout-review></app-checkout-review>
+        </cdk-step>
+        <cdk-step [label]="'Payment'">
+          <app-checkout-payment [checkoutForm]="checkoutForm"></app-checkout-payment>
+        </cdk-step>
+      </app-stepper>
+    </div>
+    <div class="col-4">
+      <app-order-totals></app-order-totals>
+    </div>
+  </div>
 </div>
+<!--<div class="container mt-5">
+  <div class="row">
+    <div class="col-8">
+      <app-stepper [linearModeSelected]="true" #appStepper>
+        <cdk-step [label]="'Address'">
+          <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
+        </cdk-step>
+        <cdk-step [label]="'Delivery'">
+          <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
+        </cdk-step>
+        <cdk-step [label]="'Review'">
+          <app-checkout-review></app-checkout-review>
+        </cdk-step>
+        <cdk-step [label]="'Payment'">
+          <app-checkout-payment></app-checkout-payment>
+        </cdk-step>
+      </app-stepper>
+    </div>
+    <div class="col-4">
+      <app-order-totals></app-order-totals>
+    </div>
+  </div>
+</div>-->

@@ -1,18 +1,18 @@
 [
   {
     "Id": 1,
-    "TypeName": "Boards"
+    "Name": "Max"
   },
   {
     "Id": 2,
-    "TypeName": "Hats"
+    "Name": "Pro"
   },
   {
     "Id": 3,
-    "TypeName": "Boots"
+    "Name": "Plus"
   },
   {
     "Id": 4,
-    "TypeName": "Gloves"
+    "Name": "Business"
   }
 ]

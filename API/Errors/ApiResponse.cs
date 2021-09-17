@@ -7,7 +7,7 @@ namespace API.Errors
         public ApiResponse(int statusCode, string message = null)
         {
             StatusCode = statusCode;
-            //The null-coalescing operator ??
+            
             Message = message ?? GetDefaultMessageForStatusCode(statusCode);
         }
 
@@ -18,9 +18,9 @@ namespace API.Errors
         {
             return statusCode switch
             {
-                400 => "You have made a bad request",
+                400 => "Not good, You have made a bad request, Please don't try bad one",
                 401 => "You are not Authorized",
-                404 => "Resource was not found",
+                404 => "Resource could not found, Alright",
                 500 => "Internal Server Error",
                 _ => null
             };

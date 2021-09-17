@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import {ICart, ICartItem, Cart, ICartTotals} from '../shared/Interfaces/cart';
 import { InterfaceProduct } from '../shared/Interfaces/product';
+import { IDeliveryMethod } from '../shared/models/deliveryMethod';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,25 @@ export class CartService {
   
   // injecting http client
   constructor(private http: HttpClient) { }
+
+
+  createPaymentIntent() {
+    return this.http.post(this.baseUrl + 'payments/' + this.getCurrentCartValue().id, {})
+      .pipe(
+        map((cart: ICart) => {
+          this.cartSource.next(cart);
+        })
+      );
+  }
+
+  setShippingPrice(deliveryMethod: IDeliveryMethod) {
+    this.shipping = deliveryMethod.price;
+    const cart = this.getCurrentCartValue();
+    cart.deliveryMethodId = deliveryMethod.id;
+    cart.shippingPrice = deliveryMethod.price;
+    this.calculateTotals();
+    this.setCart(cart);
+  }
 
   //This is will get cart item based on ID
   getCart(id: string){

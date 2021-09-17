@@ -7,7 +7,7 @@ namespace API.Controllers
     /// This code will generate status code default error message after adding app.UseStatusCodePagesWithReExecute("errors/{0}") in startup
     /// </summary>
     [Route("errors/{code}")]
-    [ApiExplorerSettings(IgnoreApi = true)]// Adding will make api endpoints accessible via ocalhost:5001/swagger/index.html
+    [ApiExplorerSettings(IgnoreApi = true)]// Adding will make api endpoints accessible via localhost:5001/swagger/index.html
     public class ErrorController : BaseApiController
     {
         public IActionResult Error(int code)

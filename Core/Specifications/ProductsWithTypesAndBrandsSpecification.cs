@@ -1,6 +1,4 @@
 ﻿using Core.Entities;
-using System;
-using System.Linq.Expressions;
 
 namespace Core.Specifications
 {
@@ -14,8 +12,8 @@ namespace Core.Specifications
                 (!productSpecParams.TypeId.HasValue || x.ProductTypeId == productSpecParams.TypeId)
             )
         {
-            AddInclue(x => x.ProductType);
-            AddInclue(x => x.ProductBrand);
+            AddInclude(x => x.ProductType);
+            AddInclude(x => x.ProductBrand);
             AddOrderBy(x => x.Name);
             ApplyPaging(productSpecParams.PageSize * (productSpecParams.PageIndex - 1), productSpecParams.PageSize);
 
@@ -37,8 +35,8 @@ namespace Core.Specifications
 
         public ProductsWithTypesAndBrandsSpecification(int id) : base(x => x.Id == id)
         {
-            AddInclue(x => x.ProductType);
-            AddInclue(x => x.ProductBrand);
+            AddInclude(x => x.ProductType);
+            AddInclude(x => x.ProductBrand);
         }
     }
 }

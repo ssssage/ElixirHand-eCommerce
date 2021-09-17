@@ -6,3 +6,10 @@ export interface InterfacePaging {
   count: number;
   data: InterfaceProduct[];
 }
+
+export class Paging implements InterfacePaging {
+  pageIndex: number;
+  pageSize: number;
+  count: number;
+  data: InterfaceProduct[] = [];
+}
