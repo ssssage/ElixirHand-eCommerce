@@ -9,47 +9,7 @@
   <ItemGroup>
     <Compile Remove="Controllers\FallbackController.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="wwwroot\images\products\Slide1.PNG" />
-    <Content Remove="wwwroot\images\products\Slide10.PNG" />
-    <Content Remove="wwwroot\images\products\Slide11.PNG" />
-    <Content Remove="wwwroot\images\products\Slide12.PNG" />
-    <Content Remove="wwwroot\images\products\Slide13.PNG" />
-    <Content Remove="wwwroot\images\products\Slide14.PNG" />
-    <Content Remove="wwwroot\images\products\Slide15.PNG" />
-    <Content Remove="wwwroot\images\products\Slide16.PNG" />
-    <Content Remove="wwwroot\images\products\Slide17.PNG" />
-    <Content Remove="wwwroot\images\products\Slide18.PNG" />
-    <Content Remove="wwwroot\images\products\Slide2.PNG" />
-    <Content Remove="wwwroot\images\products\Slide3.PNG" />
-    <Content Remove="wwwroot\images\products\Slide4.PNG" />
-    <Content Remove="wwwroot\images\products\Slide5.PNG" />
-    <Content Remove="wwwroot\images\products\Slide6.PNG" />
-    <Content Remove="wwwroot\images\products\Slide7.PNG" />
-    <Content Remove="wwwroot\images\products\Slide8.PNG" />
-    <Content Remove="wwwroot\images\products\Slide9.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-    <None Include="wwwroot\images\products\Slide1.PNG" />
-    <None Include="wwwroot\images\products\Slide10.PNG" />
-    <None Include="wwwroot\images\products\Slide11.PNG" />
-    <None Include="wwwroot\images\products\Slide12.PNG" />
-    <None Include="wwwroot\images\products\Slide13.PNG" />
-    <None Include="wwwroot\images\products\Slide14.PNG" />
-    <None Include="wwwroot\images\products\Slide15.PNG" />
-    <None Include="wwwroot\images\products\Slide16.PNG" />
-    <None Include="wwwroot\images\products\Slide17.PNG" />
-    <None Include="wwwroot\images\products\Slide18.PNG" />
-    <None Include="wwwroot\images\products\Slide2.PNG" />
-    <None Include="wwwroot\images\products\Slide3.PNG" />
-    <None Include="wwwroot\images\products\Slide4.PNG" />
-    <None Include="wwwroot\images\products\Slide5.PNG" />
-    <None Include="wwwroot\images\products\Slide6.PNG" />
-    <None Include="wwwroot\images\products\Slide7.PNG" />
-    <None Include="wwwroot\images\products\Slide8.PNG" />
-    <None Include="wwwroot\images\products\Slide9.PNG" />
-  </ItemGroup>
+   
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
