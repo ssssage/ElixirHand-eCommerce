@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Name": "iPhone 12 Pro Max",
     "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
@@ -32,7 +32,11 @@
     "ProductBrandId": 2
   },
   {
+<<<<<<< HEAD
     "Name": "New Samsung Glaxy S",
+=======
+    "Name": "Samsung Glaxy S",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 250,
     "PictureUrl": "images/products/slide5.png",
@@ -40,7 +44,11 @@
     "ProductBrandId": 4
   },
   {
+<<<<<<< HEAD
     "Name": "New Huawei Pro Plus",
+=======
+    "Name": "Huawei",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 120,
     "PictureUrl": "images/products/slide6.png",
@@ -48,7 +56,11 @@
     "ProductBrandId": 5
   },
   {
+<<<<<<< HEAD
     "Name": "Huawei Business Edition",
+=======
+    "Name": "Huawei",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 10,
     "PictureUrl": "images/products/slide7.png",
@@ -56,7 +68,11 @@
     "ProductBrandId": 2
   },
   {
+<<<<<<< HEAD
     "Name": "Huawei Max",
+=======
+    "Name": "Huawei",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 8,
     "PictureUrl": "images/products/slide8.png",
@@ -64,7 +80,11 @@
     "ProductBrandId": 4
   },
   {
+<<<<<<< HEAD
     "Name": "Xiaomi Ultra Pro",
+=======
+    "Name": "Xiaomi",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 15,
     "PictureUrl": "images/products/slide9.png",
@@ -72,7 +92,11 @@
     "ProductBrandId": 4
   },
   {
+<<<<<<< HEAD
     "Name": "Xiaomi Pro",
+=======
+    "Name": "Xiaomi",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 18,
     "PictureUrl": "images/products/slide10.png",
@@ -80,7 +104,11 @@
     "ProductBrandId": 3
   },
   {
+<<<<<<< HEAD
     "Name": "Oppo Business",
+=======
+    "Name": "Oppo",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 15,
     "PictureUrl": "images/products/slide11.png",
@@ -88,7 +116,11 @@
     "ProductBrandId": 3
   },
   {
+<<<<<<< HEAD
     "Name": "Nokia Plus pro",
+=======
+    "Name": "Nokia",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A slightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 16,
     "PictureUrl": "images/products/slide12.png",
@@ -96,7 +128,11 @@
     "ProductBrandId": 4
   },
   {
+<<<<<<< HEAD
     "Name": "Nokia Business Plus",
+=======
+    "Name": "Nokia",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "Our most advanced dual camera system ever. An even brighter OLED display. A lightning fast chip that leaves the competition behind. A huge leap in battery life.",
     "Price": 14,
     "PictureUrl": "images/products/slide13.png",
@@ -104,7 +140,11 @@
     "ProductBrandId": 4
   },
   {
+<<<<<<< HEAD
     "Name": "Samsung Pro Max",
+=======
+    "Name": "Samsung",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 250,
     "PictureUrl": "images/products/slide14.png",
@@ -112,7 +152,11 @@
     "ProductBrandId": 6
   },
   {
+<<<<<<< HEAD
     "Name": "Nokia Pro 9",
+=======
+    "Name": "Nokia Pro",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 189.99,
     "PictureUrl": "images/products/slide15.png",
@@ -120,7 +164,11 @@
     "ProductBrandId": 2
   },
   {
+<<<<<<< HEAD
     "Name": "Samsung 8 Max",
+=======
+    "Name": "Samsung S 8",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 199.99,
     "PictureUrl": "images/products/slide16.png",
@@ -128,7 +176,11 @@
     "ProductBrandId": 2
   },
   {
+<<<<<<< HEAD
     "Name": "Xiaomi X Pro",
+=======
+    "Name": "Xiaomi X",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 150,
     "PictureUrl": "images/products/slide17.png",
@@ -136,7 +188,11 @@
     "ProductBrandId": 1
   },
   {
+<<<<<<< HEAD
     "Name": "Huawei 9S Pro ",
+=======
+    "Name": "Huawei Pro",
+>>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
     "Description": "A dramatically more powerful camera system. An all new OLED display with ProMotion. The worlds fastest smartphone chip. A huge leap in battery life.",
     "Price": 180,
     "PictureUrl": "images/products/slide18.png",

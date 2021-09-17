@@ -9,6 +9,6 @@
         public string PictureUrl { get; set; }
         public string ProductType { get; set; }
         public string ProductBrand { get; set; }
-        
+
     }
 }
