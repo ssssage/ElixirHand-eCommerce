@@ -1,7 +1,6 @@
 [
   {
     "Id": 1,
-<<<<<<< HEAD
     "Name": "Max"
   },
   {
@@ -15,20 +14,5 @@
   {
     "Id": 4,
     "Name": "Business"
-=======
-    "Name": "Boards"
-  },
-  {
-    "Id": 2,
-    "Name": "Hats"
-  },
-  {
-    "Id": 3,
-    "Name": "Boots"
-  },
-  {
-    "Id": 4,
-    "Name": "Gloves"
->>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
   }
 ]
