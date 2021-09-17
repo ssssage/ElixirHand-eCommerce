@@ -129,6 +129,69 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get-NotFoundEndPoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/endpointdoesnotexist",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"endpointdoesnotexist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 400 ValidationError",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/buggy/badrequest/five",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"buggy",
+						"badrequest",
+						"five"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-nullRefError",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/buggy/servererror",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"buggy",
+						"servererror"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

@@ -7,8 +7,8 @@ namespace API.Controllers
 {
     public class BuggyController : BaseApiController
     {
-        private readonly ElixirHandShopContext _context;
-        public BuggyController(ElixirHandShopContext context)
+        private readonly ElixirHandShopDBContext _context;
+        public BuggyController(ElixirHandShopDBContext context)
         {
             _context = context; 
         }

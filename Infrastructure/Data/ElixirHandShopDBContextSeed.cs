@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data
 {
-	public class ElixirHandShopContextSeed
+	public class ElixirHandShopDBContextSeed
 	{
-		public static async Task SeedAsync(ElixirHandShopContext context, ILoggerFactory loggerFactory)
+		public static async Task SeedAsync(ElixirHandShopDBContext context, ILoggerFactory loggerFactory)
 		{
 			try
 			{
@@ -73,7 +73,7 @@ namespace Infrastructure.Data
 			}
 			catch (Exception ex)
 			{
-				var logger = loggerFactory.CreateLogger<ElixirHandShopContextSeed>();
+				var logger = loggerFactory.CreateLogger<ElixirHandShopDBContextSeed>();
 				logger.LogError(ex.Message);
 			}
 		}

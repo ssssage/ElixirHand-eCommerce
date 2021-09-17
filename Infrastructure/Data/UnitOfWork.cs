@@ -9,9 +9,9 @@ namespace Infrastructure.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly ElixirHandShopContext _context;
+        private readonly ElixirHandShopDBContext _context;
         private Hashtable _repositories;
-        public UnitOfWork(ElixirHandShopContext context)
+        public UnitOfWork(ElixirHandShopDBContext context)
         {
             _context = context;
         }

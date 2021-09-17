@@ -30,9 +30,9 @@ namespace API
                 var loggerFactory = services.GetRequiredService<ILoggerFactory>();
                 try
                 {
-                    var context = services.GetRequiredService<ElixirHandShopContext>();
+                    var context = services.GetRequiredService<ElixirHandShopDBContext>();
                     await context.Database.MigrateAsync();
-                    await ElixirHandShopContextSeed.SeedAsync(context, loggerFactory);
+                    await ElixirHandShopDBContextSeed.SeedAsync(context, loggerFactory);
 
                     var userManager = services.GetRequiredService<UserManager<AppUser>>();
                     var identityContext = services.GetRequiredService<AppIdentityDbContext>();

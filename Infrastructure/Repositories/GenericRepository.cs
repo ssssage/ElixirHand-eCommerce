@@ -12,9 +12,9 @@ namespace Infrastructure.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
-        private readonly ElixirHandShopContext _context;
+        private readonly ElixirHandShopDBContext _context;
 
-        public GenericRepository(ElixirHandShopContext context)
+        public GenericRepository(ElixirHandShopDBContext context)
         {
             _context = context;
         }   

@@ -7,9 +7,9 @@ using System.Reflection;
 
 namespace Infrastructure.Data
 {
-    public class ElixirHandShopContext : DbContext
+    public class ElixirHandShopDBContext : DbContext
     {
-        public ElixirHandShopContext(DbContextOptions<ElixirHandShopContext> options) : base(options)
+        public ElixirHandShopDBContext(DbContextOptions<ElixirHandShopDBContext> options) : base(options)
         {
 
         }

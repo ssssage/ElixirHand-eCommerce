@@ -9,9 +9,9 @@ namespace Infrastructure.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly ElixirHandShopContext _context;
+        private readonly ElixirHandShopDBContext _context;
 
-        public ProductRepository(ElixirHandShopContext context)
+        public ProductRepository(ElixirHandShopDBContext context)
         {
             _context = context;
         }
