@@ -54,3 +54,26 @@ Install them
 		type quit when to stop redis
 		Or redis-cli
 		shutdown
+		
+		=========Validate certificate===========
+		Creating WEB API Project and Solution and adding them
+
+This command will show what help is available at that level
+dotnet -h 
+
+
+  1.Create new solution
+  First Open cmd in folder projectfolder
+  dotnet new sln
+
+  2.Create new WebApi Project
+  dotnet new webapi -o projectfolder
+  
+  3. Add WebApi project into solution
+  dotnet sln add projectfolder
+  
+  4. Validate certificat
+  dotnet dev-certs https
+  dotnet dev-certs https -h
+  dotnet dev-certs https -t
+  dotnet sln list
