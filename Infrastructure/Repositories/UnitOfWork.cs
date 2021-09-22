@@ -1,11 +1,13 @@
+﻿using Core.Entities;
+using Core.Interfaces;
+using Infrastructure.Data;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
-using Core.Entities;
-using Core.Interfaces;
-using Infrastructure.Repositories;
 
-namespace Infrastructure.Data
+namespace Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -28,7 +30,7 @@ namespace Infrastructure.Data
 
         public IGenericRepository<TEntity> Repository<TEntity>() where TEntity : BaseEntity
         {
-            if(_repositories == null) _repositories = new Hashtable();
+            if (_repositories == null) _repositories = new Hashtable();
 
             var type = typeof(TEntity).Name;
 
@@ -40,7 +42,7 @@ namespace Infrastructure.Data
                 _repositories.Add(type, repositoryInstance);
             }
 
-            return (IGenericRepository<TEntity>) _repositories[type];
+            return (IGenericRepository<TEntity>)_repositories[type];
         }
     }
 }

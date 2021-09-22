@@ -1,30 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <Compile Remove="Data\Config\DeliveryMethodConfiguration.cs" />
-    <Compile Remove="Data\Config\OrderConfiguration.cs" />
-    <Compile Remove="Data\Config\OrderItemConfiguration.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
-    <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
-    <PackageReference Include="Stripe.net" Version="39.66.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
-	  <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Data\ElixirHandShopSQLDBContext.cs" />
+		<Compile Remove="Data\ElixirHandShopSQLDBContextSeed.cs" />
+		<Compile Remove="Data\Migrations\20210921103717_SqlDbInitial.cs" />
+		<Compile Remove="Data\Migrations\20210921103717_SqlDbInitial.Designer.cs" />
+		<Compile Remove="Data\Migrations\ElixirHandShopSQLDBContextModelSnapshot.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Data\SeedData\**" CopyToOutputDirectory="PreserveNewest" />
+		<ProjectReference Include="..\Core\Core.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
+		<!--<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />-->
+		<PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
+		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
+		<PackageReference Include="Stripe.net" Version="39.66.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
+	</ItemGroup>
 
-  <!--<ItemGroup>
-    <Folder Include="Data\SeedData\" />
-  </ItemGroup>-->
+	
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+	</PropertyGroup>
 
 </Project>

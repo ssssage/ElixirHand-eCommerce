@@ -77,3 +77,18 @@ dotnet -h
   dotnet dev-certs https -h
   dotnet dev-certs https -t
   dotnet sln list
+  
+  
+  ======================================= Add new Migrations ======================
+	dotnet-ef migrations add SqlDbInitial -p Infrastructure -s API -c ElixirHandShopSQLDBContext -o Data/Migrations
+	
+	To undo this action, use 'ef migrations remove'
+	
+	dotnet ef database update -p Infrastructure -s API -c ElixirHandShopSQLDBContext
+	
+	
+	======================================= Add new Migrations ======================
+	
+	dotnet ef migrations add OrederEntityInitial -p Infrastructure -s API -c ElixirHandShopDBContext
+	
+	dotnet ef database drop -p Infrastructure -s API -c ElixirHandShopDBContext

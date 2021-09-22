@@ -1,4 +1,5 @@
 ﻿using Core.Entities;
+using Core.Entities.OrderAggregate;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -65,6 +66,25 @@ namespace Infrastructure.Data
 					{
 						//iterate all the item and add them into database
 						context.Products.Add(item);
+					}
+					//Please save them, thanks
+					await context.SaveChangesAsync();
+				}
+
+
+				//Products Data does not exist
+				if (!context.DeliveryMethods.Any())
+				{
+					//Then go ahead and read it from the following path and store into brands variable, thanks
+					var deliveryData = File.ReadAllText("../Infrastructure/Data/SeedData/delivery.json");
+
+					//Now go ahead, deserialized everything you read from above path, thanks
+					var deliveryMethods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
+
+					foreach (var item in deliveryMethods)
+					{
+						//iterate all the item and add them into database
+						context.DeliveryMethods.Add(item);
 					}
 					//Please save them, thanks
 					await context.SaveChangesAsync();

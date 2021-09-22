@@ -10,7 +10,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using StackExchange.Redis;
+using System.IO;
 
 namespace API
 {
@@ -30,6 +32,10 @@ namespace API
         {
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
+
+            //services.AddDbContext<ElixirHandShopSQLDBContext>(x =>
+            //x.UseSqlServer(_config.GetConnectionString("DefaultSqlConnection")));
+
             services.AddDbContext<ElixirHandShopDBContext>(x =>
             x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
 
@@ -73,6 +79,14 @@ namespace API
             app.UseRouting();
             app.UseStaticFiles();
 
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                   Path.Combine(Directory.GetCurrentDirectory(), "Content")
+               ),
+                RequestPath = "/content"
+            });
+
             app.UseCors(builder => builder
                .AllowAnyHeader()
                .AllowAnyMethod()
@@ -90,6 +104,7 @@ namespace API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                //endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }
