@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export interface ICart {
-    id: string;
+  id: string;
   items: ICartItem[];
   clientSecret?: string;
   paymentIntentId?: string;
@@ -11,7 +11,7 @@ export interface ICart {
 
  export interface ICartItem {
     id: number;
-   productName: string;
+    productName: string;
     price: number;
     quantity: number;
     pictureUrl: string;

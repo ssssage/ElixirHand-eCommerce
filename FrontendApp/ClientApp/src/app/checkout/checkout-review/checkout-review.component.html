@@ -1,24 +1,9 @@
-<!--<div class="mt-4">
-    <app-basket-summary
-        [isBasket]=false
-        [items]="(basket$ | async).items"
-    >
-    </app-basket-summary>
-</div>
-
-<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
-    <button class="btn btn-outline-primary" cdkStepperPrevious>
-        <i class="fa fa-angle-left"></i> Back to Delivery
-    </button>
-    <button class="btn btn-primary" (click)="createPaymentIntent()" >
-        Go to Payment <i class="fa fa-angle-right"></i>
-    </button>
-</div>-->
-
-
-
 <div class="mt-4">
-  <app-cart-summary [isCart]=false></app-cart-summary>
+    <app-cart-summary
+        [isCart]=false
+        [items]="(cart$ | async).items"
+    >
+    </app-cart-summary>
 </div>
 
 <div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
@@ -28,4 +13,7 @@
   <button class="btn btn-primary" cdkStepperNext>
     Go to Payment <i class="fa fa-angle-right"></i>
   </button>
+
 </div>
+
+

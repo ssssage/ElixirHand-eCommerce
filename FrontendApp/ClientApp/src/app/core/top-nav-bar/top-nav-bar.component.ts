@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AccountService } from '../../account/account.service';
-import { CartService } from '../../cart/cart.service';
-import { ICart } from '../../shared/Interfaces/cart';
-import { IUser } from '../../shared/Interfaces/user';
+import { AccountService } from 'src/app/account/account.service';
+import { CartService } from 'src/app/cart/cart.service';
+import { ICart } from 'src/app/shared/Interfaces/cart';
+import { IUser } from 'src/app/shared/Interfaces/user';
 
 @Component({
   selector: 'app-top-nav-bar',

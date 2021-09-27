@@ -56,13 +56,13 @@ namespace API
             services.AddApplicationServices();
             services.AddIdentityServices(_config);
             services.AddSwaggerDocumentation();
-            services.AddCors(); // Make sure you call this previous to AddMvc
+            //services.AddCors(); // Make sure you call this previous to AddMvc
 
             services.AddCors(opt =>
             {
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200/");
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
                 });
             });
         }
@@ -87,12 +87,12 @@ namespace API
                 RequestPath = "/content"
             });
 
-            app.UseCors(builder => builder
-               .AllowAnyHeader()
-               .AllowAnyMethod()
-               .SetIsOriginAllowed((host) => true)
-               .AllowCredentials()
-           );
+           // app.UseCors(builder => builder
+           //    .AllowAnyHeader()
+           //    .AllowAnyMethod()
+           //    .SetIsOriginAllowed((host) => true)
+           //    .AllowCredentials()
+           //);
 
             app.UseCors("CorsPolicy");
 

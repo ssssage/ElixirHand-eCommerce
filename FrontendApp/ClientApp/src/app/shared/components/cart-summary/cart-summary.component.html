@@ -24,12 +24,12 @@
                 <tr *ngFor="let item of items" class="border-0">
                     <th scope="row">
                         <div class="p-0">
-                            <img src="{{item.pictureUrl}}" alt="{{item.name}}"
+                            <img src="{{item.pictureUrl}}" alt="{{item.productName}}"
                                 class="img-fluid" style="max-height: 50px;">
                             <div class="ml-3 d-inline-block align-middle">
                                 <h5 class="mb-0">
-                                    <a routerLink="/store/{{item.id || item.id}}"
-                                        class="text-dark">{{item.name}}</a>
+                                  <a routerLink="/store/{{item.id || item.id}}"
+                                     class="text-dark">{{item.productName}}</a>
                                 </h5>
                                 <span
                                     *ngIf="item.type"

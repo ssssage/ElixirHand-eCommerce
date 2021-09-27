@@ -55,6 +55,7 @@ export class CartService {
     .pipe(
       map((cart: ICart) => {
         this.cartSource.next(cart);
+        this.shipping = cart.shippingPrice;
         this.calculateTotals();
       })
     );
@@ -78,7 +79,12 @@ export class CartService {
 
   addItemToCart(item: InterfaceProduct, quantity = 1) {
     const itemToAdd: ICartItem = this.mapProductItemToCartItem(item, quantity);
-    const cart = this.getCurrentCartValue() ?? this.createCart();
+    let cart = this.getCurrentCartValue();
+    if (cart === null) {
+      cart = this.createCart();
+
+    }
+
     cart.items = this.addOrUpdateItem(cart.items, itemToAdd, quantity);
     this.setCart(cart);
   }

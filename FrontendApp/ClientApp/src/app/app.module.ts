@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
+import { StoreModule } from './store/store.module';
 import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/Interceptors/error';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -18,16 +19,16 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent   
+    AppComponent,   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxSpinnerModule,
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
-    HomeModule
+    HomeModule,
+    NgxSpinnerModule
   ],
     providers: [
       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

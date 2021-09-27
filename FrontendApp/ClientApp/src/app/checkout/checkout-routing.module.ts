@@ -1,7 +1,8 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CheckoutSuccessComponent } from './checkout-success/checkout-success.component';
 import { CheckoutComponent } from './checkout.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CheckoutSuccessComponent } from './checkout-success/checkout-success.component';
+
 
 const routes: Routes = [
   { path: '', component: CheckoutComponent },

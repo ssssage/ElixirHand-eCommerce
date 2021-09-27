@@ -17,11 +17,11 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [TopNavBarComponent, TestErrorComponent, NotFoundComponent, ServerErrorComponent, SectionHeaderComponent],
   imports: [
     CommonModule,
-    RouterModule,   
+    RouterModule,
     BreadcrumbModule,
     SharedModule,
-    ToastNoAnimationModule.forRoot({
-      positionClass: 'toast-bottom-left',
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
       preventDuplicates: true
     })
   ],
