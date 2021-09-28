@@ -12,10 +12,10 @@ namespace Infrastructure.Services
     {
         private readonly ICartRepository _cartRepo;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IPaymentService _paymentService;
-        public OrderService(ICartRepository cartRepo, IUnitOfWork unitOfWork, IPaymentService paymentService)
+        
+        public OrderService(ICartRepository cartRepo, IUnitOfWork unitOfWork)
         {
-            _paymentService = paymentService;
+           
             _unitOfWork = unitOfWork;
             _cartRepo = cartRepo;
         }
@@ -41,18 +41,8 @@ namespace Infrastructure.Services
             // calc subtotal
             var subtotal = items.Sum(item => item.Price * item.Quantity);
 
-            // check to see if order exists
-            var spec = new OrderByPaymentIntentIdSpecification(cart.PaymentIntentId);
-            var existingOrder = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
-
-            if (existingOrder != null)
-            {
-                _unitOfWork.Repository<Order>().Delete(existingOrder);
-                await _paymentService.CreateOrUpdatePaymentIntent(cart.PaymentIntentId);
-            }
-
             // create order
-            var order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal, cart.PaymentIntentId);
+            var order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal);
             _unitOfWork.Repository<Order>().Add(order);
 
             // save to db
