@@ -1,5 +1,5 @@
 # ElixirHand
-   ElixirHand eCommerce-Services is an open-source ongoing e-Commerce project based on Angular, Bootstrap, SASS, TypeScript, and ASP.NET Core WEB API.
+   ElixirHand-eCommerce is an open-source ongoing e-Commerce project based on Angular, Bootstrap, SASS, TypeScript, and ASP.NET Core WEB API.
 
 # Project Description
   This project is built upon restful web api using asp.net core that access the database using Entity Framework Core. 
