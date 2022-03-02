@@ -11,9 +11,10 @@
 *.rdb
 *.db
 appsettings.json
+API/appsettings.json
 bin
 obj
-
+*appsettings.json
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
