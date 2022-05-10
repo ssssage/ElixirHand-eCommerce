@@ -25,3 +25,14 @@
   * Orders from shopping cart
   * Payments Handling via Stripe (new EU standards and 3D secure)
   * An much more
+  
+# How to run the project and test
+* redis-2.4.5-win32-win64\64bit Run redis-cli.exe and redis-server.exe
+
+* open cmd within your API project where .csproj exist and run => dotnet watch run
+* browse => https://localhost:5001/api/products
+
+* open cmd within your ClientApp project where package.json exist and run => ng serve
+
+* browse => https://localhost:4200/ or https://localhost:4200/store
+ 
