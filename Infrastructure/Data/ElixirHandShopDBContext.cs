@@ -29,7 +29,7 @@ namespace Infrastructure.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+            if (Database.ProviderName == "Npgsql.EntityFrameworkCore.PostgreSQL")
             {
                 foreach (var entityType in modelBuilder.Model.GetEntityTypes())
                 {

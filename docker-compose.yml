@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
 
   redis:
@@ -12,30 +14,29 @@ services:
     image: rediscommander/redis-commander:latest
     environment:
       - REDIS_HOSTS=local:redis:6379
-      - HTTP_USER=admin
-      - HTTP_PASSWORD=thisispass
+      - HTTP_USER=Jony
+      - HTTP_PASSWORD=password
     ports:
       - 8081:8081
     depends_on:
       - redis
-<<<<<<< HEAD
+  
   db:
     image: postgres
-    restart: always
     environment:
-      POSTGRES_PASSWORD: thisispass
-      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: Jony
     ports:
       - 5432:5432
+    volumes:
+      - postgres-data:/data
 
   adminer:
     image: adminer
     restart: always
     ports:
-      - 8080:8080  
-       
-=======
-    
->>>>>>> 346ef7eeccc65ff0c4c1a8867e7d870c43fadce8
+      - 8080:8080
+
 volumes:
   redis-data:
+  postgres-data:

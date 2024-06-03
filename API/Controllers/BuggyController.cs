@@ -17,7 +17,7 @@ namespace API.Controllers
         [Authorize]
         public ActionResult<string> GetSecretText()
         {
-            return "Get Secret from Buggy testauth";
+            return "secret stuff";
         }
 
         [HttpGet("notfound")]

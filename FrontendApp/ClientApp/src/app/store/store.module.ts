@@ -9,6 +9,7 @@ import { StoreRoutingModule } from './store-routing.module';
 
 
 
+
 @NgModule({
   declarations: [StoreComponent, ProductItemComponent, ProductDetailsComponent],
   imports: [

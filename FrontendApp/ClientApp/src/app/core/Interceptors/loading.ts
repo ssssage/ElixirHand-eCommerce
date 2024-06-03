@@ -1,8 +1,8 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { delay, Observable, identity, finalize } from 'rxjs';
 import { EngageService } from '../services/engage.service';
 import { Injectable } from '@angular/core';
-import { delay, finalize } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
@@ -23,11 +23,9 @@ export class LoadingInterceptor implements HttpInterceptor {
 
     this.engageService.engage();
 
-    return next.handle(req).pipe(
-      delay(1000),
-      finalize(() => {
-        this.engageService.pitty();
-      })
-    );
+      return next.handle(req).pipe(
+      (environment.production ? identity : delay(1000)),
+        finalize(() => this.engageService.pitty())
+      )
   }
 }

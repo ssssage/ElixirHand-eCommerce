@@ -60,7 +60,7 @@ namespace Infrastructure.Services
                 var options = new PaymentIntentCreateOptions
                 {
                     Amount = (long) cart.Items.Sum(i => i.Quantity * (i.Price * 100)) + (long) shippingPrice * 100,
-                    Currency = "usd",
+                    Currency = "gbp",
                     PaymentMethodTypes = new List<string> {"card"}
                 };
                 intent = await service.CreateAsync(options);

@@ -2,19 +2,19 @@
   Order Summary
 </div>
 <div class="p-4">
-  <p class="font-italic mb-4">Shipping costs will be added depending on choices made during checkout</p>
-  <ul class="list-unstyled mb-4">
+  <p class="fst-italic mb-4">Shipping costs will be added depending on choices made during checkout</p>
+  <ul class="list-unstyled mb-4"  *ngIf="(cartService.cartTotal$ | async) as totals">
     <li class="d-flex justify-content-between py-3 border-bottom">
       <strong class="text-muted">Order subtotal</strong>
-      <strong>{{subtotal | currency}}</strong>
+      <strong>{{totals.subtotal | currency: 'GBP'}}</strong>
     </li>
     <li class="d-flex justify-content-between py-3 border-bottom">
       <strong class="text-muted">Shipping and handling</strong>
-      <strong>{{shippingPrice | currency}}</strong>
+      <strong>{{totals.shippingPrice | currency: 'GBP'}}</strong>
     </li>
     <li class="d-flex justify-content-between py-3 border-bottom">
       <strong class="text-muted">Total</strong>
-      <strong>{{total | currency}}</strong>
+      <strong>{{totals.total | currency: 'GBP'}}</strong>
     </li>
   </ul>
 </div>

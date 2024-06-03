@@ -77,15 +77,10 @@ export class CartService {
     return this.cartSource.value;
   }
 
-  addItemToCart(item: InterfaceProduct, quantity = 1) {
-    const itemToAdd: ICartItem = this.mapProductItemToCartItem(item, quantity);
-    let cart = this.getCurrentCartValue();
-    if (cart === null) {
-      cart = this.createCart();
-
-    }
-
-    cart.items = this.addOrUpdateItem(cart.items, itemToAdd, quantity);
+  addItemToCart(item: InterfaceProduct | ICartItem, quantity = 1) {
+    if (this.isProduct(item)) item = this.mapProductItemToCartItem(item);
+    const cart = this.getCurrentCartValue() ?? this.createCart();
+    cart.items = this.addOrUpdateItem(cart.items, item, quantity);
     this.setCart(cart);
   }
 
@@ -103,21 +98,23 @@ export class CartService {
       cart.items[foundItemIndex].quantity--;
       this.setCart(cart);
     } else {
-      this.removeItemFromCart(item);
+      this.removeItemFromCart(item.id);
     }
   }
 
-  removeItemFromCart(item: ICartItem) {
-    const cart = this.getCurrentCartValue();
-    if (cart.items.some(x => x.id === item.id)) {
-      cart.items = cart.items.filter(i => i.id !== item.id);
-      if (cart.items.length > 0) {
-        this.setCart(cart);
-      } else {
-        this.deleteCart(cart);
+  removeItemFromCart(id: number, quantity = 1) {
+      const cart = this.getCurrentCartValue();
+      if (!cart) return;
+      const item = cart.items.find(x => x.id === id);
+      if (item) {
+        item.quantity -= quantity;
+        if (item.quantity === 0) {
+          cart.items = cart.items.filter(x => x.id !== id);
+        }
+        if (cart.items.length > 0) this.setCart(cart);
+        else this.deleteCart(cart);
       }
     }
-  }
 
   deleteLocalCart(id: string) {
     this.cartSource.next(null);
@@ -162,16 +159,23 @@ export class CartService {
     return cart;
   }
 
-  private mapProductItemToCartItem(item: InterfaceProduct, quantity: number): ICartItem {
+  private mapProductItemToCartItem(item: InterfaceProduct): ICartItem {
     return {
       id: item.id,
       productName: item.name,
       price: item.price,
+      quantity: 0,
       pictureUrl: item.pictureUrl,
-      quantity,
       brand: item.productBrand,
       type: item.productType
-    };
+    }
+  }
+
+
+  private isProduct(item: InterfaceProduct | ICartItem): item is InterfaceProduct {
+    return (item as InterfaceProduct).productBrand !== undefined;
+  }
 }
 
-}
+
+

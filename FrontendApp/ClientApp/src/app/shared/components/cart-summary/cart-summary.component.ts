@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { Observable } from 'rxjs';
 import { CartService } from '../../../cart/cart.service';
-import { ICart, ICartItem } from '../../interfaces/cart';
+import { ICart, ICartItem } from '../../Interfaces/cart';
 import { IOrderItem } from '../../models/order';
 
 
@@ -11,31 +10,17 @@ import { IOrderItem } from '../../models/order';
   styleUrls: ['./cart-summary.component.scss']
 })
 export class CartSummaryComponent implements OnInit {
-  cart$: Observable<ICart>; 
-  @Output() decrement: EventEmitter<ICartItem> = new EventEmitter<ICartItem>();
-  @Output() increment: EventEmitter<ICartItem> = new EventEmitter<ICartItem>();
-  @Output() remove: EventEmitter<ICartItem> = new EventEmitter<ICartItem>();
+  @Output() addItem = new EventEmitter<ICartItem>();
+  @Output() removeItem = new EventEmitter<{ id: number, quantity: number }>();
   @Input() isCart = true;
-  @Input() items: ICartItem[] | IOrderItem[] = [];
-  @Input() isOrder = false;
-
-  constructor() { }
-
-  ngOnInit() {
-
-    
+  constructor(public cartService: CartService) { }
+  ngOnInit(): void {
   }
-
-  decrementItemQuantity(item: ICartItem) {
-    this.decrement.emit(item);
+  addCartItem(item: ICartItem) {
+    this.addItem.emit(item);
   }
-   
-  incrementItemQuantity(item: ICartItem) {
-    this.increment.emit(item);
+  removeCartItem(id: number, quantity = 1) {
+    this.removeItem.emit({ id, quantity });
   }
-
-  removeCartItem(item: ICartItem) {
-    this.remove.emit(item);
-  }
-
 }
+

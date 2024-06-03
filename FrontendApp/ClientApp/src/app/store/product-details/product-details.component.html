@@ -6,19 +6,31 @@
     </div>
     <div class="col-6">
       <h3>{{product.name}}</h3>
-      <p style="font-size: 2em;">{{product.price | currency}}</p>
+      <p style="font-size: 2em;">{{product.price | currency: 'GBP'}}</p>
+
+      <h5 class="text-primary mb-3" *ngIf="quantityInCart > 0">
+        You have {{quantityInCart}} of this item in your cart
+      </h5>
+
       <div class="d-flex justify-content-start align-items-center">
-        <i (click)="decrementQuantity()" class="fa fa-minus-circle text-warning mr-2" style="cursor: pointer; font-size: 2em;"></i>
-        <span class="font-weight-bold" style="font-size: 1.5em;">{{quantity}}</span>
+        <i (click)="decrementQuantity()" class="fa fa-minus-circle text-warning me-2" style="cursor: pointer; font-size: 2em;"></i>
+
+        <span class="fw-bold" style="font-size: 1.5em;">{{quantity}}</span>
         <i (click)="incrementQuantity()" class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
-        <button (click)="addItemToCart()" class="btn btn-outline-primary btn-lg ml-4">Add to Cart</button>
+
+        <button (click)="updateCart()"
+                [disabled]="quantity === quantityInCart"
+                class="btn btn-outline-primary btn-lg ms-4">
+          {{buttonText}}
+        </button>
       </div>
     </div>
+  </div>
     <div class="row mt-5">
-      <div class="col-12 ml-3">
+      <div class="col-12 ms-3">
         <h4>Description</h4>
         <p>{{product.description}}</p>
       </div>
     </div>
   </div>
-</div>
+

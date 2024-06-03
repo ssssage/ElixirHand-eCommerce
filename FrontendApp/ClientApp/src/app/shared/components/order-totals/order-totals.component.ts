@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartService } from '../../../cart/cart.service';
 
 @Component({
   selector: 'app-order-totals',
@@ -7,11 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class OrderTotalsComponent implements OnInit {
 
-  @Input() shippingPrice: number;
-  @Input() subtotal: number;
-  @Input() total: number;
-
-  constructor() { }
+  
+  constructor(public cartService: CartService) { }
 
   ngOnInit(): void {
   }

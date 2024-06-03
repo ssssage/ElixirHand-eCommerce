@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ICart, ICartItem, ICartTotals } from '../shared/Interfaces/cart';
+import { ICartItem } from '../shared/Interfaces/cart';
 import { CartService } from './cart.service';
 
 @Component({
@@ -10,26 +9,17 @@ import { CartService } from './cart.service';
 })
 export class CartComponent implements OnInit {
 
-  cart$: Observable<ICart>;
-  cartTotals$: Observable<ICartTotals>;
-
-  constructor(private cartService: CartService) { }
-
+  //cart$: Observable<ICart>;
+  //cartTotals$: Observable<ICartTotals>;
   ngOnInit(): void {
-    this.cart$ = this.cartService.cart$;
-    this.cartTotals$ = this.cartService.cartTotal$;
+
   }
 
-  removeCartItem(item: ICartItem) {
-    this.cartService.removeItemFromCart(item);
+  constructor(public cartService: CartService) { }
+  incrementQuantity(item: ICartItem) {
+    this.cartService.addItemToCart(item);
   }
-
-  incrementItemQuantity(item: ICartItem) {
-    this.cartService.incrementItemQuantity(item);
+  removeItem(event: { id: number, quantity: number }) {
+    this.cartService.removeItemFromCart(event.id, event.quantity);
   }
-
-  decrementItemQuantity(item: ICartItem) {
-    this.cartService.decrementItemQuantity(item);
-  }
-
 }

@@ -8,3 +8,28 @@ dotnet_code_quality_unused_parameters = non_public:suggestion
 
 # IDE0059: Unnecessary assignment of a value
 csharp_style_unused_value_assignment_preference = unused_local_variable:suggestion
+
+FrontendApp/ClientApp/.angular/
+FrontendApp/ClientApp/ssl/
+FrontendApp/ClientApp/node_modules/
+
+.angular/cache
+ssl/
+node_modules/
+/bin/
+**/bin/
+
+# Angular directory and its contents
+FrontendApp/ClientApp/.angular/
+
+# SSL directory and its contents
+FrontendApp/ClientApp/ssl/
+
+# bin directory in the API folder and its contents
+API/bin/
+FrontendApp/bin
+Infrastructure/bin
+Core/bin
+
+# Node modules directory and its contents
+FrontendApp/ClientApp/node_modules/

@@ -54,5 +54,4 @@ export class StoreService {
     return this.http.get<IProductType[]>(this.baseUrl + 'products/types');
   }
 
-
 }

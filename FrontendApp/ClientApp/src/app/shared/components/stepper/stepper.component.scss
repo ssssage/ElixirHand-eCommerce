@@ -1,21 +1,28 @@
 button.nav-link {
-    background: #e9ecef;
-    border-radius: 0;
-    border: none;
+  background: #e9ecef;
+  border-radius: 0;
+  border: none;
+  color: #333;
 
-    &:focus {
-        outline: none;
-    }
-    &.active:hover {
-        color: white;
-    }
-    & :active {
-        outline: none;
-    }
-    &.active:focus {
-        outline: none;
-    }
-    &:disabled:not(.active) {
-        color: #333;
-    }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.active:hover {
+    color: white;
+  }
+
+  & :active {
+    outline: none;
+  }
+
+  &.active:focus {
+    outline: none;
+  }
+
+  &:disabled:not(.active) {
+    color: #333;
+    background: #e9ecef;
+  }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { AccountService } from '../account/account.service';
 import { CartService } from '../cart/cart.service';
 import { ICartTotals } from '../shared/Interfaces/cart';
@@ -12,7 +11,6 @@ import { ICartTotals } from '../shared/Interfaces/cart';
 })
 export class CheckoutComponent implements OnInit {
 
-  cartTotals$: Observable<ICartTotals>;
   checkoutForm: FormGroup;
 
   constructor(private fb: FormBuilder, private accountService: AccountService, private cartService: CartService) { }
@@ -22,7 +20,6 @@ export class CheckoutComponent implements OnInit {
     this.createCheckoutForm();
     this.getAddressFormValues();
     this.getDeliveryMethodValue();
-    this.cartTotals$ = this.cartService.cartTotal$;
   }
   createCheckoutForm() {
     this.checkoutForm = this.fb.group({

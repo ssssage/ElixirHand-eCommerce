@@ -3,7 +3,7 @@
     "Name": "iPhone 12 Pro Max",
     "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 200,
-    "PictureUrl": "images/products/Slide1.png",
+    "PictureUrl": "images/products/slide1.png",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
@@ -11,7 +11,7 @@
     "Name": "iPhone 12 Pro",
     "Description": "The largest, most advanced Always On Retina display. The most durable Apple Watch ever. Breakthrough health innovations. Up to 33 prec faster charging.",
     "Price": 150,
-    "PictureUrl": "images/products/Slide2.png",
+    "PictureUrl": "images/products/slide2.png",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
