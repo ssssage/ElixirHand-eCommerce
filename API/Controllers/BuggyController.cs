@@ -17,7 +17,7 @@ namespace API.Controllers
         [Authorize]
         public ActionResult<string> GetSecretText()
         {
-            return "secret stuff";
+            return "don't share secret stuff";
         }
 
         [HttpGet("notfound")]
