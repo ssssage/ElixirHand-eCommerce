@@ -14,17 +14,17 @@ namespace Infrastructure.Identity
             {
                 var user = new AppUser
                 {
-                    DisplayName = "JonyJony",
-                    Email = "jony@test.com",
-                    UserName = "jony@test.com",
+                    DisplayName = "Sabir",
+                    Email = "sabir@test.com",
+                    UserName = "sabir@test.com",
                     Address = new Address
                     {
-                        FirstName = "Jony",
-                        LastName = "Jony",
-                        Street = "19 Simple Street",
-                        City = "Dubai",
-                        State = "No State",
-                        Zipcode = "25314"
+                        FirstName = "Sabir",
+                        LastName = "Khan",
+                        Street = "13 Big Bridge",
+                        City = "Pakistan",
+                        State = "PK",
+                        Zipcode = "53003"
                     }
                 };
 

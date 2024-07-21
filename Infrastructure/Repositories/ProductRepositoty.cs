@@ -2,8 +2,6 @@
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -42,6 +40,12 @@ namespace Infrastructure.Repositories
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
         {
             return await _context.ProductTypes.ToListAsync();
+        }
+
+        public async Task AddProductAsync(Product product)  // New method implementation
+        {
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
         }
     }
 }

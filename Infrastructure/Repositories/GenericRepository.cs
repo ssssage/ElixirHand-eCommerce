@@ -6,6 +6,7 @@ using Infrastructure.Evaluation;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
@@ -17,11 +18,11 @@ namespace Infrastructure.Repositories
         public GenericRepository(ElixirHandShopDBContext context)
         {
             _context = context;
-        }   
+        }
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _context.Set<T>().FindAsync(id); 
+            return await _context.Set<T>().FindAsync(id);
         }
 
         public async Task<IReadOnlyList<T>> ListAllAsync()
@@ -29,12 +30,10 @@ namespace Infrastructure.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-
         public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).FirstOrDefaultAsync();
         }
-
 
         public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
         {
@@ -50,7 +49,6 @@ namespace Infrastructure.Repositories
         {
             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }
-
 
         public void Add(T entity)
         {
@@ -68,5 +66,21 @@ namespace Infrastructure.Repositories
             _context.Set<T>().Remove(entity);
         }
 
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
+
+        public IQueryable<T> Query()
+        {
+            return _context.Set<T>().AsQueryable();
+        }
+
+        public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(predicate);
+        }
+
+      
     }
 }
