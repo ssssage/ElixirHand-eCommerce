@@ -44,18 +44,34 @@ namespace API.Controllers
             return Ok(new Pagination<ProductToReturnDto>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, data));
         }
 
+        // Client endpoint
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
             var product = await _productRepo.GetEntityWithSpec(spec);
 
             if (product == null) return NotFound(new ApiResponse(404));
+            //return Ok(product);
+            return _mapper.Map<Product, ProductToReturnDto>(product);
+        }
+
+        // Admin endpoint
+        [HttpGet("admin/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<Product>> GetProductForAdmin(int id)
+        {
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+
+            var product = await _productRepo.GetEntityWithSpec(spec);
+
+            if (product == null) return NotFound(new ApiResponse(404));
+
             return Ok(product);
-            //return _mapper.Map<Product, ProductUpdateDto>(product);
         }
 
         [HttpGet("brands")]
@@ -162,7 +178,17 @@ namespace API.Controllers
             if (file == null || file.Length == 0)
                 return BadRequest("No file uploaded.");
 
-            var ext = Path.GetExtension(file.FileName);
+            // Validate file extension
+            var validExtensions = new[] { ".jpg", ".jpeg", ".png" };
+            var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
+
+            // Validate MIME type
+            var validMimeTypes = new[] { "image/jpeg", "image/png" };
+            if (!validExtensions.Contains(ext) || !validMimeTypes.Contains(file.ContentType.ToLowerInvariant()))
+            {
+                return BadRequest("Invalid file type. Only .jpg and .png files are allowed.");
+            }
+
             var imageName = $"{Guid.NewGuid()}{ext}";
             var path = Path.Combine("Content/images/products", imageName);
 
@@ -174,8 +200,7 @@ namespace API.Controllers
             return Ok(new { ImageUrl = $"images/products/{imageName}" });
         }
 
+
+
     }
 }
-
-
-

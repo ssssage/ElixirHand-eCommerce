@@ -22,4 +22,23 @@ namespace API.Helpers
             return null;
         }
     }
-}
+    public class ProductUrlResolverForProductUpdateDto : IValueResolver<Product, ProductUpdateDto, string>
+    {
+        private readonly IConfiguration _config;
+
+        public ProductUrlResolverForProductUpdateDto(IConfiguration config)
+        {
+            _config = config;
+        }
+        public string Resolve(Product source, ProductUpdateDto destination,
+            string destMember, ResolutionContext context)
+        {
+            if (!string.IsNullOrEmpty(source.PictureUrl))
+            {
+                return _config["ApiUrl"] + source.PictureUrl;
+            }
+            return null;
+        }
+    }
+
+ }
