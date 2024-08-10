@@ -5,10 +5,12 @@ using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    //[Authorize]
     public class ProductsController : BaseApiController
     {
         private readonly IMapper _mapper;
@@ -26,6 +28,7 @@ namespace API.Controllers
             _productBrandRepo = productBrandRepo;
             _productTypeRepo = productTypeRepo;
         }
+
 
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
@@ -172,6 +175,34 @@ namespace API.Controllers
             return Ok();
         }
 
+        //[HttpPost("upload-image")]
+        //public async Task<IActionResult> UploadImage(IFormFile file)
+        //{
+        //    if (file == null || file.Length == 0)
+        //        return BadRequest("No file uploaded.");
+
+        //    // Validate file extension
+        //    var validExtensions = new[] { ".jpg", ".jpeg", ".png" };
+        //    var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
+
+        //    // Validate MIME type
+        //    var validMimeTypes = new[] { "image/jpeg", "image/png" };
+        //    if (!validExtensions.Contains(ext) || !validMimeTypes.Contains(file.ContentType.ToLowerInvariant()))
+        //    {
+        //        return BadRequest("Invalid file type. Only .jpg and .png files are allowed.");
+        //    }
+
+        //    var imageName = $"{file.FileName}";
+        //    var path = Path.Combine("Content/images/products", imageName);
+
+        //    using (var stream = new FileStream(path, FileMode.Create))
+        //    {
+        //        await file.CopyToAsync(stream);
+        //    }
+
+        //    return Ok(new { ImageUrl = $"images/products/{imageName}" });
+        //}
+
         [HttpPost("upload-image")]
         public async Task<IActionResult> UploadImage(IFormFile file)
         {
@@ -189,16 +220,26 @@ namespace API.Controllers
                 return BadRequest("Invalid file type. Only .jpg and .png files are allowed.");
             }
 
-            var imageName = $"{Guid.NewGuid()}{ext}";
-            var path = Path.Combine("Content/images/products", imageName);
+            // Build the path where the image should be saved
+            string baseDir = Path.Combine(Directory.GetCurrentDirectory(), "Content", "images", "products");
+
+            if (!Directory.Exists(baseDir))
+            {
+                Directory.CreateDirectory(baseDir);
+            }
+
+            var imageName = $"{file.FileName}";
+            var path = Path.Combine(baseDir, imageName);
 
             using (var stream = new FileStream(path, FileMode.Create))
             {
                 await file.CopyToAsync(stream);
             }
 
-            return Ok(new { ImageUrl = $"images/products/{imageName}" });
+            // Return the relative URL for the saved image
+            return Ok(new { PictureUrl = $"/images/products/{imageName}" });
         }
+
 
 
 

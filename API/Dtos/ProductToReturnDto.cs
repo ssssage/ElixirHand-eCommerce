@@ -12,5 +12,8 @@ namespace API.Dtos
         public string ProductType { get; set; }
         public string ProductBrand { get; set; }
 
+        public int ProductTypeId { get; set; }
+        public int ProductBrandId { get; set; }
+
     }
 }
